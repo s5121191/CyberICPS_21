@@ -1,0 +1,2516 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE cairis_model PUBLIC "-//CAIRIS//DTD MODEL 1.0//EN" "http://cairis.org/dtd/cairis_model.dtd">
+<cairis_model>
+
+
+<tvtypes>
+<vulnerability_type name="Configuration" >
+  <description>A vulnerability resulting from an error in the configuration and administration of a system or component.</description>
+</vulnerability_type>
+<vulnerability_type name="Design" >
+  <description>A vulnerability inherent in the design or specification of hardware or software whereby even a perfect implementation will result in a vulnerability.</description>
+</vulnerability_type>
+<vulnerability_type name="Implementation" >
+  <description>A vulnerability resulting from an error made in implementing software or hardware of a satisfactory design.</description>
+</vulnerability_type>
+<threat_type name="Electronic/DoS and DDoS" >
+  <description>A Denial-of-Service (DoS) attack involves a malicious attempt to disrupt the operation of a computer system or network that is connected to the Internet.  A Distributed Denial-of-Service (DDoS) attack is a more dangerous evolution of a DoS attack because it utilises a network of compromised zombie computers to mount the attack, so there is no identifiable single source.</description>
+</threat_type>
+<threat_type name="Electronic/Hacking" >
+  <description>Hackers want to get into your computer system and use them for their own purposes.  There are many hacking tools available on the internet as well as online communities actively discussing hacking techniques enabling even unskilled hackers to break into unprotected systems.  Hackers have a range of motives; from showing off their technical prowess, to theft of money, credentials or information, to cause damage.</description>
+</threat_type>
+<threat_type name="Electronic/Keystoke logging" >
+  <description>Keystroke loggers work by recording the sequence of key-strokes that a user types in.  The more sophisticated versions use filtering mechanisms to only record highly prized information such as email addresses, passwords and credit card number sequences.</description>
+</threat_type>
+<threat_type name="Electronic/Malware" >
+  <description>Malware is any program or file that is harmful to a computer, the term covers viruses, worms, Trojan horses, and spyware.  Malware is becoming increasingly sophisticated and can be used to compromise computers to install DOS zombie programs or other malicious programs.</description>
+</threat_type>
+<threat_type name="Electronic/Phishing and Spoofing" >
+  <description>Phishing describes a social engineering process designed to trick an organisation's customers into imparting confidential information such as passwords, personal data or banking and financial details.  Most commonly these are criminal attacks but the same techniques could be used by others to get sensitive information.</description>
+</threat_type>
+<threat_type name="Insider/Manipulation" >
+  <description>Sometimes deliberate attempts are made to acquire information or access by manipulating staff by using a range of influencing techniques.  This is sometimes described as social engineering, creating situations in which someone will willingly provide access to information, sites or systems to someone unauthorised to receive it.  Customer facing personnel who have been trained to be helpful and informative can be particularly vulnerable to such attacks.</description>
+</threat_type>
+<threat_type name="Insider/Sabotage" >
+  <description>Saborage is often committed by a former employee seeking revenge on their employer because of a personal grudge caused by a negative work related event such as dismissal.  Although it is sometimes planned well in advance, it can also be the result of an opportunistic moment.</description>
+</threat_type>
+<threat_type name="Natural" >
+  <description>Environment / Acts of Nature</description>
+</threat_type>
+<threat_type name="Physical" >
+  <description>Physical Security</description>
+</threat_type>
+</tvtypes>
+
+<domainvalues>
+<threat_value name="None" >
+  <description>To be defined</description>
+</threat_value>
+<threat_value name="Low" >
+  <description>To be defined</description>
+</threat_value>
+<threat_value name="Medium" >
+  <description>To be defined</description>
+</threat_value>
+<threat_value name="High" >
+  <description>To be defined</description>
+</threat_value>
+<risk_value name="Negligible" >
+  <description>
+</description>
+</risk_value>
+<risk_value name="Tolerable" >
+  <description>
+</description>
+</risk_value>
+<risk_value name="Undesirable" >
+  <description>
+</description>
+</risk_value>
+<risk_value name="Intolerable" >
+  <description>
+</description>
+</risk_value>
+<countermeasure_value name="None" >
+  <description>To be defined</description>
+</countermeasure_value>
+<countermeasure_value name="Low" >
+  <description>To be defined</description>
+</countermeasure_value>
+<countermeasure_value name="Medium" >
+  <description>To be defined</description>
+</countermeasure_value>
+<countermeasure_value name="High" >
+  <description>To be defined</description>
+</countermeasure_value>
+<severity_value name="Negligible" >
+  <description>
+</description>
+</severity_value>
+<severity_value name="Marginal" >
+  <description>
+</description>
+</severity_value>
+<severity_value name="Critical" >
+  <description>
+</description>
+</severity_value>
+<severity_value name="Catastrophic" >
+  <description>
+</description>
+</severity_value>
+<likelihood_value name="Incredible" >
+  <description>
+</description>
+</likelihood_value>
+<likelihood_value name="Improbable" >
+  <description>
+</description>
+</likelihood_value>
+<likelihood_value name="Remote" >
+  <description>
+</description>
+</likelihood_value>
+<likelihood_value name="Occasional" >
+  <description>
+</description>
+</likelihood_value>
+<likelihood_value name="Probable" >
+  <description>
+</description>
+</likelihood_value>
+<likelihood_value name="Frequent" >
+  <description>
+</description>
+</likelihood_value>
+</domainvalues>
+
+<cairis>
+<project_settings name="Cambrian Incident Report - Case Study" >
+  <background>On the morning of 20 October 2017, four trains travelled over the Cambrian Coast railway in the UK while temporary speed restriction (TSR) data was not being sent to the trains by the ERTMS/ETCS Level 2 signalling system. The TSR data was not uploaded during an automated signalling computer restart the previous evening, but a display screen used by the signaller to verify the uploading of TSRs incorrectly showed the restrictions as being loaded for transmission to trains. The fault was only recognised when a train driver realised he had passed over a level crossing at excessive speed because a TSR that applied on the approach to the crossing was not displayed on his driver machine interface (DMI) and he reported this to the control centre.
+
+No accident resulted, but this was clearly a significant wrong side failure of the first ERTMS/ETCS application in the UK and the Rail Accident Investigation Branch (RAIB) decided to launch a full investigation. It turned out to be one of the most complex investigations undertaken by RAIB since its inception and it was over two years before the full report was published on 19 December 2019.
+
+The RAIB investigation report gave following recommendations:
+Where a safety process requires an operator to check information on a computer screen, 'Liveness' of the information displayed is crucial.
+The safety case for an 'Intermediate SIL' system must take account of failure modes of the software architecture.
+Good communication between safety engineers and software developers is essential.
+'Fit and Forget' is never ALARP for a software-based system.
+</background>
+  <strategic_goals>Identify safety (STPA), security (Threat and Risk Modelling) and human factors (Task Analysis) issues.</strategic_goals>
+  <rich_picture image="" />
+  <scope>A case study being conducted for an Empirical Evaluation of porposed design framework for PhD research.
+
+</scope>
+  <contributors>
+    <contributor first_name="Amna" surname="Altaf" affiliation="BU" role="Scribe" />
+    <contributor first_name="Huseyin" surname="Dogan" affiliation="BU" role="Facilitator" />
+    <contributor first_name="Shamal " surname="Faily" affiliation="BU" role="Facilitator" />
+    <contributor first_name="Alexios" surname="Myolonas" affiliation="BU" role="Facilitator" />
+    <contributor first_name="Eylem" surname="Thron" affiliation="Ricardo plc" role="Participant" />
+  </contributors>
+</project_settings>
+<environment name="Default" short_code="DEF" >
+  <definition>Default environment</definition>
+  <asset_values>
+    <none>To be defined</none>
+    <low>To be defined</low>
+    <medium>To be defined</medium>
+    <high>To be defined</high>
+  </asset_values>
+</environment>
+<environment name="Peak Hours" short_code="Peak" >
+  <definition>The service peak hours are from Monday-Friday 0630-0930 and 1600-1900hrs.</definition>
+  <asset_values>
+    <none>To be defined</none>
+    <low>To be defined</low>
+    <medium>To be defined</medium>
+    <high>To be defined</high>
+  </asset_values>
+</environment>
+<environment name="Off-Peak Hours" short_code="Off-Peak" >
+  <definition>The service off-peak hours are from Monday-Friday at all other times (minus peak hours). 
+It also includes all day on Weekends and Bank Holidays.</definition>
+  <asset_values>
+    <none>To be defined</none>
+    <low>To be defined</low>
+    <medium>To be defined</medium>
+    <high>To be defined</high>
+  </asset_values>
+</environment>
+</cairis>
+
+<riskanalysis>
+<role name="On-board Staff" type="Stakeholder" short_code="Staff" >
+  <description>The on-board staff in train includes ticketing staff, caterer, chef, shop-keeper, cleaner and guard.</description>
+</role>
+<role name="On-board Passenger" type="Stakeholder" short_code="Passenger" >
+  <description>The person who is supposed to travel in train.</description>
+</role>
+<role name="Signalman" type="Data Controller" short_code="Signaller" >
+  <description>The person responsible for controlling the signals for movement and operation of trains.</description>
+</role>
+<role name="Train Driver" type="Data Controller" short_code="Driver" >
+  <description>The person responsible for driving the train.</description>
+</role>
+<role name="Train Maintainer" type="Data Controller" short_code="Maintainer" >
+  <description>The person responsible for train maintainance, fault finding and repair etc.</description>
+</role>
+<asset name="Traffic Log" short_code="Traffic Log" type="Information" is_critical="0">
+  <description>Traffic log is maintained for railway traffic.</description>
+  <significance>Traffic Log is used in case of investigations required for accidents.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="availability" value="Medium">
+    <rationale>Required for accident investigations.</rationale>
+  </security_property>
+</asset>
+<asset name="Road Traffic" short_code="Road Traffic" type="Information" is_critical="0">
+  <description>The road traffic also needs to be managed in accordance with railway traffic.</description>
+  <significance>During trains movement the road traffic issues need to be considered like closing of gates and barriers etc.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="Medium">
+    <rationale>Road traffic needs to be managed according to train movements.</rationale>
+  </security_property>
+</asset>
+<asset name="ERTMS Operational Levels" short_code="Operational Levels" type="Information" is_critical="0">
+  <description>The ERTMS operational levels are maintained to ensure safe and efficient regulation of train service.</description>
+  <significance>The train drivers are signaled to identify the appropriate ERTMS levels for driving.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>Efficient regulation of trains.</rationale>
+  </security_property>
+</asset>
+<asset name="GSM-R Data Radio" short_code="Data Radio" type="Information" is_critical="0">
+  <description>Data Radio is responsible for capturing the GSM-R data packets from network.</description>
+  <significance>Data radio contains information about movement authority signals.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>Responsible for getting data packets.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="availability" value="Medium">
+    <rationale>Network management.</rationale>
+  </security_property>
+</asset>
+<asset name="On-board Power Supply" short_code="Power Supply" type="Information" is_critical="0">
+  <description>Power supply required to operate the trains.</description>
+  <significance>Without power supply no train operations may take place.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="availability" value="High">
+    <rationale>From main power grid.</rationale>
+  </security_property>
+</asset>
+<asset name="Main Power Grid" short_code="Power Grid" type="Information" is_critical="0">
+  <description>Responsible for supplying power to driving cabs and railway stations.</description>
+  <significance>Without power supply no operations may take place.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="availability" value="High">
+    <rationale>Train movement depend on power supply.</rationale>
+  </security_property>
+</asset>
+<asset name="Driver Advisory System" short_code="DAS" type="Information" is_critical="0">
+  <description>A system through which train driver interacts with on-board system.</description>
+  <significance>Information about Driver ID, Train Movement Route etc,</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="confidentiality" value="Low">
+    <rationale>System displaying the interaction mechanism.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>No mistakes.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="availability" value="Medium">
+    <rationale>System must be available to drivers.</rationale>
+  </security_property>
+</asset>
+<asset name="European Vital Computer" short_code="EVC" type="Information" is_critical="0">
+  <description>It is the EVC that provides the supervision of the train's movements against all the inputs received from the trackside equipment, onboard odometry, the driver and other stored information.</description>
+  <significance>The EVC provides outputs to the driver through the ERTMS DMI, to other train systems and functions through the Train Interface Unit (TIU) and transmits information back to the RBC.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="confidentiality" value="Low">
+    <rationale>Information about train movement.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>Supervision of trains movement.</rationale>
+  </security_property>
+</asset>
+<asset name="Train Interface Unit" short_code="TIU" type="Information" is_critical="0">
+  <description>Train function control systems. For example, ERTMS is able to provide information for the command of the change of traction systems, the raising/lowering of an overhead pantograph and command the air tightness function to activate/deactivate where certain trackside data has been received.</description>
+  <significance>The TIU is the means by which ERTMS interfaces to other train systems.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="Medium">
+    <rationale>Interface to all systems used by drivers.</rationale>
+  </security_property>
+</asset>
+<asset name="Radio Block Center" short_code="RBC" type="Information" is_critical="0">
+  <description>The RBC is a computer-based system that generates messages to be sent to the train on the basis of information received from external systems, for example the interlocking, or the ERTMS onboard equipment.</description>
+  <significance>The main objective of these messages is to provide ERTMS MAs to allow the safe movement of trains on the railway infrastructure area under the responsibility of the RBC.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="confidentiality" value="Medium">
+    <rationale>Messages to train.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>Train movement depends on these messages.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="availability" value="Medium">
+    <rationale>Train operations.</rationale>
+  </security_property>
+</asset>
+<asset name="GSM-R Railway Network" short_code="Network" type="Information" is_critical="0">
+  <description>Railway network which generates data packets.</description>
+  <significance>GSM-R network contains data packets about movement authority.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="confidentiality" value="High">
+    <rationale>Contains data packets for train movement.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>Train movement signals are given.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="availability" value="Medium">
+    <rationale>Train movement decisions depend on this network.</rationale>
+  </security_property>
+</asset>
+<asset name="GSM-R Data Packets" short_code="Data Packets" type="Information" is_critical="0">
+  <description>Signalers generates data packets over the railway network to train drivers.</description>
+  <significance>Train drivers operate based on instructions in data packets.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="confidentiality" value="High">
+    <rationale>Data packets containing instructions for train movement.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>Train movement depend on these instructions.</rationale>
+  </security_property>
+</asset>
+<asset name="Movement Authority Signals" short_code="MS Signals" type="Information" is_critical="0">
+  <description>The data signals containing information for movement of trains.</description>
+  <significance>Train drivers rely on these signals generated by signalers for train movement.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="confidentiality" value="High">
+    <rationale>About train movement.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>Generated by signaler.</rationale>
+  </security_property>
+</asset>
+<asset name="Route Settings Information" short_code="Route Settings" type="Information" is_critical="0">
+  <description>Signaler sets the route for train movement.</description>
+  <significance>Route settings made by signaler lets the driver performs his driving tasks.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>The route settings must be upto date and appropriate.</rationale>
+  </security_property>
+</asset>
+<asset name="GSM-R Status Record" short_code="GSM-R Status Record" type="Information" is_critical="0">
+  <description>The GSM-R status record for trains movement is maintained by signaler in his workstation.</description>
+  <significance>The record is used in case of any investigations required for accidents or wrong operations.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="Medium">
+    <rationale>Maintained by signaler.</rationale>
+  </security_property>
+</asset>
+<asset name="Faults and Failure Log" short_code="Faults and Failure" type="Information" is_critical="0">
+  <description>The faults and failures identified during operational use is kept in log by Signaler.</description>
+  <significance>It is Signalers job to identify the possible fault and failure responsible for compromising the safety of people.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="availability" value="Medium">
+    <rationale>Log maintenance for future use.</rationale>
+  </security_property>
+</asset>
+<asset name="Impact Log" short_code="Impact Log" type="Information" is_critical="0">
+  <description>The signaler keeps the record for impact of failures faced during operations.</description>
+  <significance>It is Signalers job to anticipate the possible impacts of faults and failures and also maintain its log.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="availability" value="Medium">
+    <rationale>Kept for failures.</rationale>
+  </security_property>
+</asset>
+<asset name="Response Log" short_code="Response Log" type="Information" is_critical="0">
+  <description>The response takes for identified faults and failure is managed and kept in record by signaler.</description>
+  <significance>It is Signalers job to maintain response log for failures.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="availability" value="Medium">
+    <rationale>For future use.</rationale>
+  </security_property>
+</asset>
+<asset name="Recovery Log" short_code="Recovery Log" type="Information" is_critical="0">
+  <description>The recovery actions takes in case of failures are kept in record by signalers.</description>
+  <significance>It is Signalers job to maintain recovery log for future use.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="availability" value="Medium">
+    <rationale>For future use.</rationale>
+  </security_property>
+</asset>
+<asset name="Odometry System" short_code="Odometry" type="Information" is_critical="0">
+  <description>The odometry system on board the train provides ERTMS with both speed and distance travelled information.</description>
+  <significance>This has to be high integrity and so is usually provided by more than one measurement.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>This has to be high integrity and so is usually provided by more than one measurement.</rationale>
+  </security_property>
+</asset>
+<asset name="ERTMS Driver Machine Interface" short_code="DMI" type="Information" is_critical="0">
+  <description>The ERTMS DMI:
+Provides the means for the driver to enter data into the onboard system.
+Displays actual train speed.
+Displays supervised speed and changes ordered by the ERTMS trackside equipment.
+Displays information about the route ahead (the “planning information”).</description>
+  <significance>DMI also alerts the driver to changes in supervision, errors and other warnings (visually and audibly), including text messages.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="confidentiality" value="Low">
+    <rationale>Means for driver to enter data.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="integrity" value="Medium">
+    <rationale>Display of information to drivers.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="availability" value="High">
+    <rationale>Interface available to drivers.</rationale>
+  </security_property>
+</asset>
+<asset name="Isolation Mode Switch" short_code="Isolation Mode" type="Information" is_critical="0">
+  <description>The ERTMS onboard equipment must incorporate a control that enables it to be physically isolated from the traction unit's braking system and, where required, other onboard systems.</description>
+  <significance>This control should be physically separate from the ERTMS onboard equipment so that the train is not totally immobilised by failure/removal of ERTMS.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="Medium">
+    <rationale>Used in special circumstances.</rationale>
+  </security_property>
+</asset>
+<asset name="ERTMS Reset Button" short_code="Reset" type="Information" is_critical="0">
+  <description>The ERTMS onboard equipment must incorporate a control (ERTMS reset) that enables an authorised user to temporarily interrupt the power supply to the ERTMS onboard equipment (that is, invoke a transition to and out of No Power mode (NP)) without interrupting the power supply to other onboard systems.</description>
+  <significance>The ERTMS reset must be located within each driving cab, but outside the reach zone of the train driver's normal seated position.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="Medium">
+    <rationale>Used in case of emergency or certain special situations.</rationale>
+  </security_property>
+</asset>
+<asset name="Train Route Information" short_code="Route Info" type="Information" is_critical="0">
+  <description>ERTMS DMI displays the train route information for drivers.</description>
+  <significance>Signalers are responsible for generating the route information for drivers which is displayed to them in ERTMS DMI.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>Defines the route for train movement.</rationale>
+  </security_property>
+</asset>
+<asset name="Text Messages" short_code="Text Messages" type="Information" is_critical="0">
+  <description>The ERTMS onboard equipment will automatically generate system status messages and display these as text messages for the driver to indicate changes of the state of the system.</description>
+  <significance>Risk assessments on the provision of additional text messages must consider the hazard of driver distraction.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>Text messages generated for drivers.</rationale>
+  </security_property>
+</asset>
+<asset name="Warnings and Alerts" short_code="Warning Alert" type="Information" is_critical="0">
+  <description>Text messages, in addition to the automatically generated system status messages, must only be provided where there is a safety, performance or operational need.</description>
+  <significance>Fault and failure indications must support the driver in determining the impact on train operations.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="Medium">
+    <rationale>Alerts generated to drivers in case of emergency.</rationale>
+  </security_property>
+</asset>
+<asset name="Driver Advisory Information" short_code="DAI" type="Information" is_critical="0">
+  <description>The provision of driver advisory information requires a similar data set to that required to be entered for ERTMS operations, for example Driver ID, Train Running Number, braking parameters, and maximum train speed.</description>
+  <significance>Providing an interface for this common information to be shared by DAS and ERTMS may reduce train preparation and driver handover time, and reduce the risk of data entry errors.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="confidentiality" value="Medium">
+    <rationale>No public sharing of information.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>information needs to be accurate.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="availability" value="Medium">
+    <rationale>Appropriate information must be available to drivers.</rationale>
+  </security_property>
+</asset>
+<asset name="Temporary Speed Restrictions" short_code="TSR" type="Information" is_critical="0">
+  <description>Temporary Speed Restrictions for speed limits.</description>
+  <significance>Very critical.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="availability" value="High">
+    <rationale>It is very important for TSR to be displayed on DMI.</rationale>
+  </security_property>
+</asset>
+<asset name="Switches, Track Points and Rail Junctions" short_code="Switches" type="Systems" is_critical="0">
+  <description>The switches and rail junctions are responsible for controlling the directions of locomotives (trams) taking passengers from one place to another.</description>
+  <significance>The switch and rail junctions must be controlled and managed wisely to avoid any accidents.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="confidentiality" value="Low">
+    <rationale>There must be no unauthorized access to control system.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>The switches and rail junctions must be working accurately to avoid any accidents.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="availability" value="Medium">
+    <rationale>The switches and rail junctions must be working properly during service hours.</rationale>
+  </security_property>
+</asset>
+<asset name="Railway Connection System" short_code="Connection System" type="Systems" is_critical="0">
+  <description>The Railway Connection System comprises of Switches, Track Points and Railway Junctions.</description>
+  <significance>The Tracks by means of which trains and trams travel.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="availability" value="High">
+    <rationale>Train tracks and switches.</rationale>
+  </security_property>
+</asset>
+<asset name="Railway Control System" short_code="Control System" type="Systems" is_critical="0">
+  <description>The railway control system is responsible for managing the train operations.</description>
+  <significance>Railway Control System comprises of Traffic Management and Signalling Control Systems.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="confidentiality" value="Medium">
+    <rationale>Responsible for managing trains.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>Traffic Management.</rationale>
+  </security_property>
+</asset>
+<asset name="Traffic Management System" short_code="Traffic Mgmt Sys" type="Systems" is_critical="0">
+  <description>The traffic management system keeps the traffic log and also looks after the road traffic.</description>
+  <significance>Traffic Management System ensures the efficient management of train traffic.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>The integrity of traffic management system is must to ensure safe operations.</rationale>
+  </security_property>
+</asset>
+<asset name="ERTMS Signalling Control System" short_code="Signalling Control" type="Systems" is_critical="0">
+  <description>ERTMS Signalling Control System consists of on-board and track-side equipment control system.</description>
+  <significance>Responsible for managing the signalling control system for railway systems.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="confidentiality" value="Low">
+    <rationale>Information display.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>Accuracy.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="availability" value="High">
+    <rationale>Routine train operations depend on this system.</rationale>
+  </security_property>
+</asset>
+<asset name="On-board System" short_code="On-board System" type="Systems" is_critical="0">
+  <description>ERTMS on-board system manages ERTMS levels, GSM-R data radio, driver advisory system. </description>
+  <significance>ERTMS On-board System is linked to the Driving Cab.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="confidentiality" value="Low">
+    <rationale>Information to drivers.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>Train operations depend on it.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="availability" value="Medium">
+    <rationale>Available to train drivers.</rationale>
+  </security_property>
+</asset>
+<asset name="Track-side Equipment System" short_code="Equipment System" type="Systems" is_critical="0">
+  <description>The trackside equipment system manages the radio block center, GSM-R network and GSM-R data packets.</description>
+  <significance>ERTMS Track-side Equipement issues GSM-R Data Packets which are signals for Movement Authority to train drivers.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>Manages data packets and other signals for train movement.</rationale>
+  </security_property>
+</asset>
+<asset name="ERTMS Fault and Failure Management" short_code="Fault and Failure" type="Systems" is_critical="0">
+  <description>The ERTMS fault and failure management is done by Signaler.</description>
+  <significance>Fault and failure management is done to identify errors before-hand and minimize the risks of any possible hazards.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="Medium">
+    <rationale>Managed by signalers.</rationale>
+  </security_property>
+</asset>
+<asset name="ERTMS Response Management" short_code="Response Management" type="Systems" is_critical="0">
+  <description>It is signalers job to keep logs for response and recovery.</description>
+  <significance>Response and recovery actions takes in relation to fault identified.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="Medium">
+    <rationale>Response management system.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="availability" value="Medium">
+    <rationale>Used to identify faults.</rationale>
+  </security_property>
+</asset>
+<asset name="Trains and Trams" short_code="Train and Trams" type="Hardware" is_critical="0">
+  <description>The trams are vehicles/locomotives responsible for taking passengers from one place to another.</description>
+  <significance>The trams must be secured against any threat or attack.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>The trams must be active during service hours.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="availability" value="High">
+    <rationale>The trams must be available to passengers during service hours.</rationale>
+  </security_property>
+</asset>
+<asset name="Railway Tracks" short_code="Tracks" type="Hardware" is_critical="0">
+  <description>The railways tracks are means by which connection systems are built.</description>
+  <significance>Railways Tracks are responsible for the transfer of trains and trams from one station to another.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="availability" value="High">
+    <rationale>The tracks must be in operational condition.</rationale>
+  </security_property>
+</asset>
+<asset name="Gates and Barriers" short_code="Gates and Barriers" type="Hardware" is_critical="0">
+  <description>The opening  and closing of gates and barriers during train movement across city.</description>
+  <significance>The gates and barriers are closed in case of train movement to safeguard the road traffic.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="Medium">
+    <rationale>Safeguard the road traffic.</rationale>
+  </security_property>
+</asset>
+<asset name="Signallers Workstation" short_code="Sig Workstation" type="Hardware" is_critical="0">
+  <description>Signallers workstation is the official workplace for signalers from where he performs his tasks.</description>
+  <significance>Signallers Workstations allows the Signaller to make route settings etc.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="availability" value="Medium">
+    <rationale>Open to signaller during his duty.</rationale>
+  </security_property>
+</asset>
+<asset name="Train Driving Cab" short_code="Driving Cab" type="Hardware" is_critical="0">
+  <description>The train driving cab which is connected to ERTMS on-board system</description>
+  <significance>The drivers completes his job by interacting with the driving cab.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="confidentiality" value="Medium">
+    <rationale>Accessible to train drivers.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>Cab is connected to ERTMS on-board system.</rationale>
+  </security_property>
+</asset>
+<asset name="Railway Passengers" short_code="Passengers" type="People" is_critical="0">
+  <description>The people using the Railway Stations.</description>
+  <significance>Railway passengers use the railway service to go from one place to another.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="confidentiality" value="Medium">
+    <rationale>Confidentiality of passengers information.</rationale>
+  </security_property>
+</asset>
+<asset name="Railway Staff" short_code="Staff" type="People" is_critical="0">
+  <description>The Railways Staff manage the Railway Stations.</description>
+  <significance>Railway Staff comprise of different categories and each has to perform his set of duties.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="Medium">
+    <rationale>The railway staff efficiency of jobs and tasks assigned to them.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="availability" value="Medium">
+    <rationale>Railway staff availability during duty hours.</rationale>
+  </security_property>
+</asset>
+<asset name="Train Drivers" short_code="Train Drivers" type="People" is_critical="0">
+  <description>The train driver drives the locomotives based on directions given to him by Signaler.</description>
+  <significance>Train Driver is responsible for taking Passengers and other Staff members in Trains.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="availability" value="Medium">
+    <rationale>Driver's availability during duty hours.</rationale>
+  </security_property>
+</asset>
+<asset name="Railway Management Staff" short_code="Management Staff" type="People" is_critical="0">
+  <description>The railway management staff manages the issues related to proper functioning of railway systems.</description>
+  <significance>Railway Management Staff deals with train driver, railway signallers, passengers and other staff member issues.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>Accuracy of decisions.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="availability" value="High">
+    <rationale>Railway staff available during duty hours.</rationale>
+  </security_property>
+</asset>
+<asset name="Train Signalers" short_code="Train Signalers" type="People" is_critical="0">
+  <description>The train signalers give driving directives to train drivers.</description>
+  <significance>Train Drivers operations are dependent on Signalers job.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>Generates signals for train movement.</rationale>
+  </security_property>
+</asset>
+<asset name="Railway Security Guards" short_code="Security Guards" type="People" is_critical="0">
+  <description>The railway security guards are responsible for protecting the premises of railway stations against dangerous intrusion.</description>
+  <significance>Railway Security Guards protect the Railway Stations against physical intrusion.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="availability" value="High">
+    <rationale>During duty hours.</rationale>
+  </security_property>
+</asset>
+<asset name="Railway Station" short_code="Railway Station" type="System of Systems" is_critical="0">
+  <description>Railway stations are the primary entity of focus which comprises of several systems like communication and connection systems, control systems etc.</description>
+  <significance>Railway stations contains a set of assets in itself which need to be secured and protected.</significance>
+  <critical_rationale></critical_rationale>
+  <security_property environment="Peak Hours" property="confidentiality" value="Low">
+    <rationale>Open to public.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="integrity" value="High">
+    <rationale>Safe train operations.</rationale>
+  </security_property>
+  <security_property environment="Peak Hours" property="availability" value="Medium">
+    <rationale>Services available to general public.</rationale>
+  </security_property>
+</asset>
+<vulnerability name="Lack of Safety Integrity Level " type="Configuration">
+  <description>Lack of safety integrity level to ensure correct upload of data.</description>
+  <vulnerability_environment name="Peak Hours" severity="Critical">
+    <vulnerable_asset name="Route Settings Information" />
+    <vulnerable_asset name="Faults and Failure Log" />
+    <vulnerable_asset name="Train Route Information" />
+    <vulnerable_asset name="Driver Advisory Information" />
+    <vulnerable_asset name="Temporary Speed Restrictions" />
+    <vulnerable_asset name="ERTMS Fault and Failure Management" />
+  </vulnerability_environment>
+</vulnerability>
+<vulnerability name="No Error Messages for Alerting Potential Failures " type="Design">
+  <description>Lack of error messages for alerting potential failures of safety critical systems.</description>
+  <vulnerability_environment name="Peak Hours" severity="Negligible">
+    <vulnerable_asset name="Faults and Failure Log" />
+    <vulnerable_asset name="Impact Log" />
+    <vulnerable_asset name="Response Log" />
+    <vulnerable_asset name="Recovery Log" />
+    <vulnerable_asset name="ERTMS Driver Machine Interface" />
+    <vulnerable_asset name="Warnings and Alerts" />
+    <vulnerable_asset name="ERTMS Response Management" />
+  </vulnerability_environment>
+</vulnerability>
+<attacker name="Technical Operator" image="">
+  <description>Unintended mistake made by Train Maintainer. 
+He has to ensure the 'liveness' of the information being displayed after update on computer screen (DMI). 
+The data update is crucial for train operations.</description>
+  <attacker_environment name="Peak Hours">
+    <attacker_role name="Train Maintainer" />
+    <motivation name="Productivity" />
+    <capability name="Technology" value="High" />
+    <capability name="Software" value="Medium" />
+    <capability name="Knowledge/Education and Training" value="Medium" />
+  </attacker_environment>
+</attacker>
+<threat name="Threat of Loss of Data Packets" type="Electronic/Malware">
+  <method>The data packets containing valuable information are lost over network.</method>
+  <threat_environment name="Peak Hours" likelihood="Probable" >
+    <threat_attacker name="Technical Operator" />
+    <threatened_asset name="GSM-R Data Radio" />
+    <threatened_asset name="Radio Block Center" />
+    <threatened_asset name="GSM-R Railway Network" />
+    <threatened_asset name="GSM-R Data Packets" />
+    <threatened_asset name="Movement Authority Signals" />
+    <threatened_asset name="GSM-R Status Record" />
+    <threatened_property name="confidentiality" value="Low">
+      <rationale>The confidentiality of data packets containing information.</rationale>
+    </threatened_property>
+    <threatened_property name="integrity" value="Medium">
+      <rationale>The value of information.</rationale>
+    </threatened_property>
+    <threatened_property name="availability" value="High">
+      <rationale>The information must be sent.</rationale>
+    </threatened_property>
+  </threat_environment>
+</threat>
+<threat name="Threat of ERTMS Safety Related Failure" type="Electronic/Malware">
+  <method>Safety critical ERTMS or ETCS safety related failure.</method>
+  <threat_environment name="Peak Hours" likelihood="Occasional" >
+    <threat_attacker name="Technical Operator" />
+    <threatened_asset name="ERTMS Operational Levels" />
+    <threatened_asset name="ERTMS Driver Machine Interface" />
+    <threatened_asset name="ERTMS Reset Button" />
+    <threatened_asset name="ERTMS Signalling Control System" />
+    <threatened_asset name="ERTMS Fault and Failure Management" />
+    <threatened_asset name="ERTMS Response Management" />
+    <threatened_property name="confidentiality" value="Medium">
+      <rationale>Confidentiality of information.</rationale>
+    </threatened_property>
+    <threatened_property name="integrity" value="High">
+      <rationale>Integrity of information.</rationale>
+    </threatened_property>
+    <threatened_property name="availability" value="Medium">
+      <rationale>Availability of information.</rationale>
+    </threatened_property>
+  </threat_environment>
+</threat>
+<risk name="Risk of Loss of Life due to Train Collision or Derailment" vulnerability="Lack of Safety Integrity Level " threat="Threat of ERTMS Safety Related Failure">
+  <misusecase environment="Peak Hours">
+    <narrative>Risk of loss of life due to train collision or derailment.</narrative>
+  </misusecase>
+</risk>
+<risk name="Risk of Failure of Signalling Network over ERTMS" vulnerability="No Error Messages for Alerting Potential Failures " threat="Threat of Loss of Data Packets">
+  <misusecase environment="Peak Hours">
+    <narrative>Risk of failure of signalling network over ERTMS.</narrative>
+  </misusecase>
+</risk>
+<asset_association environment="Peak Hours"  head_name="Train Drivers" head_nav="0" head_adornment="Association" head_nry="1..a" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="1" tail_name="Train Driving Cab" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Train Signalers" head_nav="0" head_adornment="Association" head_nry="1..a" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="1" tail_name="Signallers Workstation" rationale="" />
+<asset_association environment="Peak Hours"  head_name="ERTMS Driver Machine Interface" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="1" tail_name="Warnings and Alerts" rationale="" />
+<asset_association environment="Peak Hours"  head_name="ERTMS Driver Machine Interface" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="1" tail_name="Text Messages" rationale="" />
+<asset_association environment="Peak Hours"  head_name="ERTMS Driver Machine Interface" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="1" tail_name="Train Route Information" rationale="" />
+<asset_association environment="Peak Hours"  head_name="ERTMS Signalling Control System" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="0" tail_name="On-board System" rationale="" />
+<asset_association environment="Peak Hours"  head_name="ERTMS Signalling Control System" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="0" tail_name="Track-side Equipment System" rationale="" />
+<asset_association environment="Peak Hours"  head_name="On-board System" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="1" tail_name="Driver Advisory System" rationale="" />
+<asset_association environment="Peak Hours"  head_name="On-board System" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="1" tail_name="On-board Power Supply" rationale="" />
+<asset_association environment="Peak Hours"  head_name="On-board System" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="1" tail_name="ERTMS Operational Levels" rationale="" />
+<asset_association environment="Peak Hours"  head_name="On-board System" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="1" tail_name="GSM-R Data Radio" rationale="" />
+<asset_association environment="Peak Hours"  head_name="On-board System" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="1" tail_name="European Vital Computer" rationale="" />
+<asset_association environment="Peak Hours"  head_name="On-board System" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="0" tail_name="Train Interface Unit" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Radio Block Center" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="0" tail_name="GSM-R Railway Network" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Railway Control System" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="1" tail_name="Traffic Management System" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Railway Control System" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="0" tail_name="ERTMS Signalling Control System" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Track-side Equipment System" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="1" tail_name="Radio Block Center" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Train Driving Cab" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="1" tail_name="Odometry System" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Train Driving Cab" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="1" tail_name="ERTMS Driver Machine Interface" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Train Driving Cab" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="1" tail_name="Isolation Mode Switch" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Train Driving Cab" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="1" tail_name="ERTMS Reset Button" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Odometry System" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1" tail_adornment="Association" tail_nav="1" tail_name="Temporary Speed Restrictions" rationale="" />
+<asset_association environment="Peak Hours"  head_name="ERTMS Fault and Failure Management" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="a" tail_adornment="Association" tail_nav="1" tail_name="Faults and Failure Log" rationale="" />
+<asset_association environment="Peak Hours"  head_name="ERTMS Fault and Failure Management" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="a" tail_adornment="Association" tail_nav="1" tail_name="Impact Log" rationale="" />
+<asset_association environment="Peak Hours"  head_name="ERTMS Response Management" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="a" tail_adornment="Association" tail_nav="1" tail_name="Recovery Log" rationale="" />
+<asset_association environment="Peak Hours"  head_name="ERTMS Response Management" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="a" tail_adornment="Association" tail_nav="1" tail_name="Response Log" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Railway Staff" head_nav="0" head_adornment="Association" head_nry="1..a" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="1" tail_name="Railway Management Staff" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Railway Staff" head_nav="0" head_adornment="Association" head_nry="1..a" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="1" tail_name="Railway Security Guards" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Railway Staff" head_nav="0" head_adornment="Association" head_nry="1..a" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="1" tail_name="Train Drivers" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Railway Staff" head_nav="0" head_adornment="Association" head_nry="1..a" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="1" tail_name="Train Signalers" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Traffic Management System" head_nav="0" head_adornment="Association" head_nry="1..a" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="0" tail_name="Road Traffic" rationale="" />
+<asset_association environment="Peak Hours"  head_name="GSM-R Data Packets" head_nav="0" head_adornment="Association" head_nry="1..a" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="0" tail_name="Movement Authority Signals" rationale="" />
+<asset_association environment="Peak Hours"  head_name="GSM-R Railway Network" head_nav="0" head_adornment="Association" head_nry="1..a" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="0" tail_name="GSM-R Data Packets" rationale="" />
+<asset_association environment="Peak Hours"  head_name="On-board Power Supply" head_nav="0" head_adornment="Association" head_nry="1..a" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="0" tail_name="Main Power Grid" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Railway Station" head_nav="0" head_adornment="Association" head_nry="1..a" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="0" tail_name="Trains and Trams" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Road Traffic" head_nav="0" head_adornment="Association" head_nry="1..a" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="0" tail_name="Gates and Barriers" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Traffic Management System" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="0" tail_name="Traffic Log" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Driver Advisory System" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="1" tail_name="Driver Advisory Information" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Railway Connection System" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="1" tail_name="Switches, Track Points and Rail Junctions" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Railway Connection System" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="1" tail_name="Railway Tracks" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Railway Station" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="0" tail_name="Railway Connection System" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Railway Station" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="0" tail_name="Railway Control System" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Railway Station" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="0" tail_name="Railway Passengers" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Railway Station" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="0" tail_name="Railway Staff" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Signallers Workstation" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="1" tail_name="Route Settings Information" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Signallers Workstation" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="1" tail_name="GSM-R Status Record" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Signallers Workstation" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="1" tail_name="ERTMS Fault and Failure Management" rationale="" />
+<asset_association environment="Peak Hours"  head_name="Signallers Workstation" head_nav="0" head_adornment="Association" head_nry="1" head_role="" tail_role="" tail_nry="1..a" tail_adornment="Association" tail_nav="1" tail_name="ERTMS Response Management" rationale="" />
+
+</riskanalysis>
+
+<usability>
+<persona name="Ray" type="Primary" assumption_persona="TRUE" image="" >
+  <activities>Ray as train driver begins his job, by booking on and getting updated information on his laptop. This is based on documentation received about booking depot and preparing train for service. Also, before operating train Ray is going to perform an on-board European Train Control System (ETCS) self-test function for finding faults and failures. He is going to produce a failure report and proceed only if the status of train for service is Safe and Fit.
+Ray is managing his operations by the help of the Driver Machine Interface (DMI) available in his driving cab. The DMI is based on European Railway Traffic Management System (ERTMS). Through DMI, Ray enters data into an on-board system. As a result, Ray receives information about his train route and allowed train speed. In order to ensure safe movement of trains, Ray takes action based on movement authority sent to him by signaller. 
+There are some activities which Ray performs to ensure efficient movement of trains, like switching of isolation mode. It is Rays job to identify the End of Authority for trains. Ray's driving cab has ERTMS reset, and sometimes under special circumstances he has the authority to reset. It is also Rays job to keep on observing signals for danger and stop the train immediately to avoid any catastrophic accidents. 
+</activities>
+  <attitudes>Ray enters the driving cab, connected to ERTMS on-board equipment and opens the desk. The driving cab has fleet plan, which identifies the train for service by train running number. Also, the cargo manifest and other documentation are available. A major part of his job is to get signal directives by communicating with train signaller. The train signaller is responsible for advising Ray about ERTMS mode required, maximum speed allowed, permission to precede movement etc.  
+Ray starts driving upon getting the driver advisory information like driver ID, train running number etc, on his screen. During operation, he notices that the train is able to approach a level crossing three times its actual speed limit. Ray is able to timely recognize this fault. Ray can pass messages through ERTMS on-board equipment to ERTMS trackside equipment, for his routine job. Therefore, after notifying to signaller, Ray reverts to manual routing, in order to not disturb the normal service of train.
+Ray is able to take operational control decisions of his vehicle by the help of information displayed on his ERTMS DMI. The ERTMS DMI displays him speed limit, train positions etc. He also gets alerts in case of any errors or warnings, and even change in supervision is communicated to him by signaller through ERTMS DMI. Ray has no room for making any mistakes while interpreting this information even when notified about stop markers.
+In case of any failure, Ray is notified by signaller and he has to take appropriate actions accordingly. Rays job will be compromised, if due to IT failure or momentary loss of signal detection he is unable to receive data packets which contain information on operations of trains transmitted via GSM-R technology.
+</attitudes>
+  <aptitudes>Ray has a huge responsibility for controlling movement of trains which carries passengers and other staff members; hence he needs to remain vigilant during duty hours. During early hours of his duty, he noticed train was travelling at 80km per hour rather than 30km per hour enroute Barmouth and Llanaber. Ray observed and reported this fault from information displayed on DMI. Ray is making all decisions by interacting with ERTMS DMI, thus the reliability and availability of ERTMS DMI is directly affecting his tasks efficiency.
+His active state of mind is must for making accurate decisions during job. He is responsible for switching in between different ERTMS levels for train movement control. Sometimes during driving Ray even receives text messages as a part of ERTMS operational control job. These might be a cause of distraction and lead to safety hazards. 
+</aptitudes>
+  <motivations>TBC</motivations>
+  <skills>TBC</skills>
+  <intrinsic>TBC</intrinsic>
+  <contextual>TBC</contextual>
+  <persona_environment name="Peak Hours" is_direct="FALSE" >
+    <persona_role name="Train Driver" />
+    <narrative></narrative>
+  </persona_environment>
+  <persona_environment name="Off-Peak Hours" is_direct="FALSE" >
+    <persona_role name="Train Driver" />
+    <narrative></narrative>
+  </persona_environment>
+</persona>
+<persona name="Neil" type="Primary" assumption_persona="TRUE" image="" >
+  <activities>Neil is performing the job of railway signaller. Neil working from his signaller's workstation is responsible for monitoring and controlling train movements. Neil begins his routine tasks by granting possession and isolation, maintaining operations log, ensuring normal service delivery, regulator intervention, manual routing, stock positioning, granting off-peak blockage, conflict prediction and resolution, issuing temporary timetable, testing back-up facilities, running route availability, running sectional time, establishing order of implementation and other operational planning decisions.
+
+As a signaller, he is responsible for the administration of train drivers, by issuing them fleet plan for keeping track of train positions and locations. Neil updates the route settings on Driver Machine Interface (DMI) as a part of European Railway Traffic Management System (ERTMS) signalling control operations. He has to make route decisions by sending train data to DMI for train movement and ensure safety. </activities>
+  <attitudes>As a part of his routine, Neil is supervising train drivers. The train drivers precede their journey, based on directives known as movement authority from signallers. Neil plans and sometime reschedules the journey information based on ERTMS standard which becomes visible to train drivers on their on-board DMI. 
+
+Neil also keeps record of GSM-R status of every train. In case, of any incident the investigation can be conducted using the traffic information kept as evidence by Neil.</attitudes>
+  <aptitudes>Neil has to be vigilant while make train signalling control and operational decisions, as they may lead to hazardous events if managed poorly. Similarly, the verification of Temporary Speed Restrictions (TSR) uploaded during routine system update is also duty of signaller. He has to ensure efficient regulation of trains. In order to fulfil safe operations, he has to be able to identify possible faults that could possibly compromise the safety.
+
+Upon IT failure, Neil reported it to concerned technicians and immediately reverted to manual routing. As management of ERTMS failures, he is authorised to inform the nature of faults identified during operation. He is also authorised to determine the failure impact on train operations and possible responses for these faults. After recovery of trains from system failures, it is Neil's job to resume their usage. </aptitudes>
+  <motivations>Neil has to ensure that safety of people is not compromised at any cost. The interoperability of control and command of signalling technical specifications is primary responsibility of Neil. He has to advise train drivers regarding their movement, maximum speed and ERTMS mode required. In case of emergency, he also has to alert the train drivers. During train movement, Neil has to manage the closing of barriers and gates to road traffic. His maximum efforts should be to minimize any possible hazardous events. 
+
+Neil has to make definite and sustained actions and anticipate errors even before their occurrence.</motivations>
+  <skills>TBC</skills>
+  <intrinsic>TBC</intrinsic>
+  <contextual>TBC</contextual>
+  <persona_environment name="Peak Hours" is_direct="FALSE" >
+    <persona_role name="Signalman" />
+    <narrative></narrative>
+  </persona_environment>
+  <persona_environment name="Off-Peak Hours" is_direct="FALSE" >
+    <persona_role name="Signalman" />
+    <narrative></narrative>
+  </persona_environment>
+</persona>
+<external_document name="Lessons Learnt over Train Speeding on Cambrian Line" version="1" date="21-Dec-19" authors="BBC News" >
+  <description>Web link: https://www.bbc.co.uk/news/uk-wales-50877224</description>
+</external_document>
+<external_document name="Assessing the Human Factors and Cyber Security Risks in the Railways " version="1" date="2020" authors="Eylem Thron" >
+  <description>MSc Thesis - Loughborough University</description>
+</external_document>
+<external_document name="Network Rail - Signalling Control Centers" version="Module A5-5" date="02-Jun-18" authors="Network Rail" >
+  <description>Published and Issued by Network Rail, 2nd Floor, One Eversholt Street, London. NW1 2DN.</description>
+</external_document>
+<external_document name="A Day in the Life of a Train - Operational Concept" version="Version 5 - OPS.117" date="09-Apr-19" authors="ERTMS" >
+  <description>Operational Principles and Rules - Technical Document</description>
+</external_document>
+<external_document name="Loss of Safety Critical Signalling Data on the Cambrian Coast Line" version="1" date="20-Jan-20" authors="RAIB" >
+  <description>This report is based on information provided to the RAIB by the relevant safety authority or public body.</description>
+</external_document>
+<external_document name="Cambrian ERTMS Loss of Temporary Speed Restrictions " version="1" date="Mar-20" authors="Ian Mitchell " >
+  <description>Research Paper was published in IRSE News March 2020. Web Link: https://secure60.prositehosting.co.uk/webdocssl/irse-kbase/ref-viewer.aspx?RefNo=45400076</description>
+</external_document>
+<external_document name="Operational Concept for The European Railway Traffic Management System" version="Issue 2" date="06-Dec-14" authors="Rail Safety and Standards Board" >
+  <description>RSSB-ERTMS-OC Iss 2</description>
+</external_document>
+<external_document name="Understanding Railway Signaller Tasks and Operations" version="1" date="14-Feb-20" authors="Keith Martin" >
+  <description>Interview Notes</description>
+</external_document>
+<document_reference name="IT Failure lead a Train to Exceed Speed Limit" contributor="Amna Altaf" document="Lessons Learnt over Train Speeding on Cambrian Line" >
+  <excerpt>IT failure allowed a train to approach a level crossing at nearly three times the speed limit.</excerpt>
+</document_reference>
+<document_reference name="Train on Normal Route Travelling at Excessive Speed" contributor="Amna Altaf" document="Lessons Learnt over Train Speeding on Cambrian Line" >
+  <excerpt>Travelling at 80km/h (50mph) rather than 30km/h (19mph) on 20-Oct-2017.</excerpt>
+</document_reference>
+<document_reference name="Train Driving at Three Times its Actual Speed" contributor="Amna Altaf" document="Lessons Learnt over Train Speeding on Cambrian Line" >
+  <excerpt>At 0852hrs Machynlleth to Pwllheli service then travelled between Barmouth and Llanaber at about 80km/h.</excerpt>
+</document_reference>
+<document_reference name="Train Driver Reported Fault based on DMI" contributor="Amna Altaf" document="Lessons Learnt over Train Speeding on Cambrian Line" >
+  <excerpt>Driver of train reported fault with information displayed on computer screen.</excerpt>
+</document_reference>
+<document_reference name="Train Driver Conducting Manual Routing" contributor="Amna Altaf" document="Lessons Learnt over Train Speeding on Cambrian Line" >
+  <excerpt>Driver reverted to manual routing and operation.</excerpt>
+</document_reference>
+<document_reference name="Train Drivers Cab has Information on DMI" contributor="Amna Altaf" document="Lessons Learnt over Train Speeding on Cambrian Line" >
+  <excerpt>Since 2011 new system has been in place for sending information to be displayed in drivers cab.</excerpt>
+</document_reference>
+<document_reference name="Train Routes Displayed on Train Drivers DMI" contributor="Amna Altaf" document="Lessons Learnt over Train Speeding on Cambrian Line" >
+  <excerpt>The system in drivers cab also shows whether trains are allowed to be on particular lines or not.</excerpt>
+</document_reference>
+<document_reference name="Permitted Speed Displayed on DMI" contributor="Amna Altaf" document="Lessons Learnt over Train Speeding on Cambrian Line" >
+  <excerpt>The system on drivers cab displayed permitted speed to travel.</excerpt>
+</document_reference>
+<document_reference name="Control Room Found Missing Speed Limit Information on Trains" contributor="Amna Altaf" document="Lessons Learnt over Train Speeding on Cambrian Line" >
+  <excerpt>Men in control room found the speed limit information not sent to any trains on the line.</excerpt>
+</document_reference>
+<document_reference name="Signallers Reverted to Manual Routing for Service" contributor="Amna Altaf" document="Lessons Learnt over Train Speeding on Cambrian Line" >
+  <excerpt>Signallers reverted to verbal and written instructions to allow trains to continue running.</excerpt>
+</document_reference>
+<document_reference name="Safe and Efficient Management of Train Movement" contributor="Amna Altaf" document="Network Rail - Signalling Control Centers" >
+  <excerpt>Signaller is responsible for managing safe and efficient movement of trains</excerpt>
+</document_reference>
+<document_reference name="Signallers Authority to Advice Movement" contributor="Amna Altaf" document="Network Rail - Signalling Control Centers" >
+  <excerpt>Signallers generate movement authority to train drivers.</excerpt>
+</document_reference>
+<document_reference name="Signallers Workstation - Enable the Signaller to Safely and Efficiently Monitor and Control Trains" contributor="Amna Altaf" document="Network Rail - Signalling Control Centers" >
+  <excerpt>Signallers have a workstation, where they can monitor and control safe and efficient movement of trains.</excerpt>
+</document_reference>
+<document_reference name="Overseeing Safe Operations" contributor="Amna Altaf" document="Network Rail - Signalling Control Centers" >
+  <excerpt>Signaller is responsible for overseeing and making sure safe operation of trains.</excerpt>
+</document_reference>
+<document_reference name="Identify Faults that have Significant Impact on Safety" contributor="Amna Altaf" document="Network Rail - Signalling Control Centers" >
+  <excerpt>Signaller is responsible for managing the faults that have a significant potential on safety.</excerpt>
+</document_reference>
+<document_reference name="Initiate Cancellation of Route" contributor="Amna Altaf" document="Network Rail - Signalling Control Centers" >
+  <excerpt>Signallers have the duty to initiate the cancellation of route upon changes.</excerpt>
+</document_reference>
+<document_reference name="Ensure Line is Safe for Operation" contributor="Amna Altaf" document="Network Rail - Signalling Control Centers" >
+  <excerpt>Signallers ensure that the line is safe for operation.</excerpt>
+</document_reference>
+<document_reference name="Train Route Setting" contributor="Amna Altaf" document="Network Rail - Signalling Control Centers" >
+  <excerpt>Signallers sends route settings to driver.</excerpt>
+</document_reference>
+<document_reference name="Book on and Get Latest Information" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Drivers book on and get upto date information into their laptops.</excerpt>
+</document_reference>
+<document_reference name="Train Driver Receives Work Orders" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Receive work orders and rule updates.</excerpt>
+</document_reference>
+<document_reference name="Drivers Book Depot" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Drivers book in at depot.</excerpt>
+</document_reference>
+<document_reference name="Receives Documentation About Train Preparation" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Receives documentation about train preparation.</excerpt>
+</document_reference>
+<document_reference name="Driver Receives Cargo Manifestation" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Also receives cargo manifest and other train documentaion.</excerpt>
+</document_reference>
+<document_reference name="Fleet Plan - Train Running Number for Identifcation of Train for Service" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Drives is given up Fleet Plan for identification of train for service like train running number.</excerpt>
+</document_reference>
+<document_reference name="Enter Leading Cab and Open Desk" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Train driver enters leading cab and opens the desk.</excerpt>
+</document_reference>
+<document_reference name="ETCS Performs Self Test Function" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Onboard European Train Control System (ETCS) performs a self test function.</excerpt>
+</document_reference>
+<document_reference name="Onboard ETCS Self Test for Finding Faults and Failures" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Onboard European Train Control System (ETCS) performs a self test function for finding any faults and failures.</excerpt>
+</document_reference>
+<document_reference name="Failure Report - Safe and Fit for Train Service" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Driver issues failure report for safe and fit service.</excerpt>
+</document_reference>
+<document_reference name="ERTMS Standard Defines Train Data" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Train data for class of train defined in the European Railway Traffic Management System (ERTMS) standards.</excerpt>
+</document_reference>
+<document_reference name="Forward Train Running Number to GSM-R" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Drives provides train running number through an interface to GSM-R radio.</excerpt>
+</document_reference>
+<document_reference name="Send Position Report to Signaller" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Driver sends position report to signaller.</excerpt>
+</document_reference>
+<document_reference name="Provide Train Location Information for Fleet Management" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Using signalling system, make train location available to railway fleet management system.</excerpt>
+</document_reference>
+<document_reference name="Train Data Reception from Driver" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Train data sent by driver received by signalling system.</excerpt>
+</document_reference>
+<document_reference name="Route and Other Train Operations" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Railway undertaking required to route train safely and assist other train operations.</excerpt>
+</document_reference>
+<document_reference name="Maintain Railway Undertaking incase of Divergance in Planned Data" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>If divergence between planned data and data received occurs than manage railway undertaking before departure.</excerpt>
+</document_reference>
+<document_reference name="Update and Rescheduling Train Operations" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Signalling system update and rescheduling.</excerpt>
+</document_reference>
+<document_reference name="Validation of Train Position" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Validation of train position by signalling system.</excerpt>
+</document_reference>
+<document_reference name="Grant Driving Mode to Train Driver" contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Signaller will grant a driving mode to driver.</excerpt>
+</document_reference>
+<document_reference name="Authorise Operations to Train Driver " contributor="Amna Altaf" document="A Day in the Life of a Train - Operational Concept" >
+  <excerpt>Signaller will authorise driver to start mission.</excerpt>
+</document_reference>
+<document_reference name="Fault Recognition by Train Driver" contributor="Amna Altaf" document="Cambrian ERTMS Loss of Temporary Speed Restrictions " >
+  <excerpt>Timely fault recognition by train driver.</excerpt>
+</document_reference>
+<document_reference name="Train Driver Passed Over at Excessive Speed" contributor="Amna Altaf" document="Cambrian ERTMS Loss of Temporary Speed Restrictions " >
+  <excerpt>Driver passed over a level crossing at excessive speed.</excerpt>
+</document_reference>
+<document_reference name="TSR not Displayed on DMI" contributor="Amna Altaf" document="Cambrian ERTMS Loss of Temporary Speed Restrictions " >
+  <excerpt>Temporary Speed Restriction (TSR) applied to the crossing was not displayed on drivers Driver Machine Interface (DMI).</excerpt>
+</document_reference>
+<document_reference name="Train Driver Reports Fault to Signalman" contributor="Amna Altaf" document="Cambrian ERTMS Loss of Temporary Speed Restrictions " >
+  <excerpt>Driver reported fault to control center.</excerpt>
+</document_reference>
+<document_reference name="TSR Not Sent to DMI" contributor="Amna Altaf" document="Cambrian ERTMS Loss of Temporary Speed Restrictions " >
+  <excerpt>Temporary Speed Restriction (TSR) was not being sent to train Driver Machine Interface (DMI).</excerpt>
+</document_reference>
+<document_reference name="TSR Sent by Level 2 ERTMS Signalling System" contributor="Amna Altaf" document="Cambrian ERTMS Loss of Temporary Speed Restrictions " >
+  <excerpt>Temporary Speed Restrcition (TSR) sent by Level 2 European Railway Train Management System (ERTMS) signalling system.</excerpt>
+</document_reference>
+<document_reference name="Display Screen Used by Signaller for TSR" contributor="Amna Altaf" document="Cambrian ERTMS Loss of Temporary Speed Restrictions " >
+  <excerpt>Signallers use display screen to verify uploading of TSRs.</excerpt>
+</document_reference>
+<document_reference name="Signaller Verify Correct Uploading of TSR" contributor="Amna Altaf" document="Cambrian ERTMS Loss of Temporary Speed Restrictions " >
+  <excerpt>TSR was incorrectly shown by driver screen.</excerpt>
+</document_reference>
+<document_reference name="Alerts to Train Driver About Changes in Supervision, Errors and Warnings" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Train driver receives alerts from Signaller.</excerpt>
+</document_reference>
+<document_reference name="Control, Command and Technical Specifications for Interoperability" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Train drivers job to control and command.</excerpt>
+</document_reference>
+<document_reference name="Data Packets Containing Information on Operation of Train" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Information about data packets used by drivers for train operations.</excerpt>
+</document_reference>
+<document_reference name="Degraded Operation - Permission for Train Driver to Proceed" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signaller directives to train drivers about degraded operations.</excerpt>
+</document_reference>
+<document_reference name="Route Information Displayed" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Driver Machine Interface (DMI) - Displays information about the route to the driver.</excerpt>
+</document_reference>
+<document_reference name="Actual Train Speed Displayed to Driver" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Driver Machine Interface (DMI) - Displays information about actual train speed to the driver.</excerpt>
+</document_reference>
+<document_reference name="Driver Advisory Information (Driver ID, Train Running Number)" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Driver Advisory Information available to drivers in their driving cab.</excerpt>
+</document_reference>
+<document_reference name="Danger Signal to be Observed" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Driver observes a signal at danger ahead.</excerpt>
+</document_reference>
+<document_reference name="Stop Train in Emergency" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>In case of emergency, driver must stop the train immediately.</excerpt>
+</document_reference>
+<document_reference name="Control Movement of Trains" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>It is the drivers responsibility to control movement of trains.</excerpt>
+</document_reference>
+<document_reference name="Identify End of Authority" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>It is the drivers responsibility to identify end of authority.</excerpt>
+</document_reference>
+<document_reference name="Active State of Mind" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Driver must maintain vigilance and an awareness of events.</excerpt>
+</document_reference>
+<document_reference name="Driving Cab Connected to ERTMS On-board Equipment" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>ERTMS on-board equipment provides information to drivers during train driving.</excerpt>
+</document_reference>
+<document_reference name="ERTMS DMI - Enter Data in On-board System" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>ERTMS DMI provides means to driver for entering data into on-board system.</excerpt>
+</document_reference>
+<document_reference name="ERTMS Reset Available to Driver" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>ERTMS Reset is available to driver within driving cab.</excerpt>
+</document_reference>
+<document_reference name="ERTMS Stop Markers" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>ERTMS stop markers enable driver to enable to a specific stop marker.</excerpt>
+</document_reference>
+<document_reference name="ERTMS Must Not Disturb Normal Regulation of Trains" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>ERTMS must not constrain normal regulation of trains.</excerpt>
+</document_reference>
+<document_reference name="Fault and Failure Indication to Driver" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signallers indication of faults and failures to driver.</excerpt>
+</document_reference>
+<document_reference name="Hazards of Driver Distraction through Text Messages" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Train driver may be distracted due to text messages received in on-board system.</excerpt>
+</document_reference>
+<document_reference name="Driver Misreading Stop Markers" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>There are hazards for misreading stop markers, no room for mistakes.</excerpt>
+</document_reference>
+<document_reference name="Information to Drivers About Speed Limit, Position and Alerts" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Information availabe to drivers through DMI.</excerpt>
+</document_reference>
+<document_reference name="Level 0 - No Supervisory Information Displayed" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>ERTMS Level 0 - No supervisory information displayed on DMI.</excerpt>
+</document_reference>
+<document_reference name="Level 1 - Overlay of Underlying Signalling System" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>ERTMS Level 1 - Overlay of underlying signalling system displayed on DMI.</excerpt>
+</document_reference>
+<document_reference name="Level 2 - Radio Based System" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>ERTMS Level 2 - Radio based system displayed on DMI.</excerpt>
+</document_reference>
+<document_reference name="Level NTC - Safe Movement for Train" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>ERTMS Level NTC - Ensure safe movement for trains.</excerpt>
+</document_reference>
+<document_reference name="Messages Passed Between Trackside and On-board Equipment" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Alert meassages passed between systems for drivers.</excerpt>
+</document_reference>
+<document_reference name="Instruct the ERTMS Mode" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Drivers are instructed about the ERTMS mode required.</excerpt>
+</document_reference>
+<document_reference name="Messages Transmitted via GSM-R" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Data packets containing messages using GSM-radio.</excerpt>
+</document_reference>
+<document_reference name="Momentary Loss of Signals" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Momentary loss of signals containing data packets.</excerpt>
+</document_reference>
+<document_reference name="RBC - Generates Messages" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Radio Based Control (RBC) system contains messages through data packets.</excerpt>
+</document_reference>
+<document_reference name="Reliability and Availability on DMI for Operation" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Drivers reliability and availability on Driver Machine Interface.</excerpt>
+</document_reference>
+<document_reference name="Text Messages Generated to Driver" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Text messages are generated to drivers.</excerpt>
+</document_reference>
+<document_reference name="Driver Observes a Signal for Movement Authority" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signal for movement authority is sent to drivers.</excerpt>
+</document_reference>
+<document_reference name="Movement Authority Messages are Displayed on DMI" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Messages for movement authority are displayed on DMI in driving cab.</excerpt>
+</document_reference>
+<document_reference name="GSM-R Status and Recorded Traffic Information " contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signallers sends trains status and traffic information over GSM-R.</excerpt>
+</document_reference>
+<document_reference name="Maintain Status of Trackside System for Incident Investigation" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signallers keep status of trackside system for incident investigation.</excerpt>
+</document_reference>
+<document_reference name="Planning Information for DMI" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signallers plan information for displaying on DMI to drivers.</excerpt>
+</document_reference>
+<document_reference name="Highest Level of Supervision - Design, Maintain and Operate" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signallers provide highest level of supervision by designing, maintaining and operating.</excerpt>
+</document_reference>
+<document_reference name="GSM-Radio - Global System for Mobile Communication" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signallers use GSM-radio as a global system for mobile communication of train data.</excerpt>
+</document_reference>
+<document_reference name="Optimised Network Capacity" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>GSM has optimised network capacity for communication of train data over trains.</excerpt>
+</document_reference>
+<document_reference name="Increased Network Capacity, Flexibility and Capability" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>GSM provide increased network capacity, flexibility and capability for sending train data.</excerpt>
+</document_reference>
+<document_reference name="Signalling Information Display on DMI" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signalling information is being displayed on the ERTMS DMI.</excerpt>
+</document_reference>
+<document_reference name="Control if Used Incorrectly Could Lead to a Hazardous event" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signallers control if used incorrectly could lead to a hazardous event.</excerpt>
+</document_reference>
+<document_reference name="Definite and Sustained Action" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signallers take definite and sustained actions.</excerpt>
+</document_reference>
+<document_reference name="Close Barriers or Gates to Road Traffic" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signallers are responsible for closing gates and barriers to road traffic.</excerpt>
+</document_reference>
+<document_reference name="Realise an Error Beforehand" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signallers realise problem or error before the action is taken.</excerpt>
+</document_reference>
+<document_reference name="ERTMS Standards for Improving Safety" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>European Railway Traffic Management System (ERTMS) standards are implemented for improving safety.</excerpt>
+</document_reference>
+<document_reference name="Efficient Regulation of Trains" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Safe and efficient regulation of trains.</excerpt>
+</document_reference>
+<document_reference name="Correlate Drivers Reported Position with Track Location" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signallers must be able to correlate the drivers reported position with a track location.</excerpt>
+</document_reference>
+<document_reference name="European Vital Computer - Supervision of Driver and Train Movement" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signallers uses european vital computer for supervision of driver and train movement.</excerpt>
+</document_reference>
+<document_reference name="Trains to Move Following Recover from System Failure" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signaller authorise train to move following recovery from system failure.</excerpt>
+</document_reference>
+<document_reference name="Inform Nature of Failure" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signallers authority to inform nature of failure.</excerpt>
+</document_reference>
+<document_reference name="Management of ERTMS Failures" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signallers manage ERTMS failure reported.</excerpt>
+</document_reference>
+<document_reference name="Determine Response for Faults" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signallers determine response for faults.</excerpt>
+</document_reference>
+<document_reference name="Fault and Failure Impact on Train Operations" contributor="Amna Altaf" document="Operational Concept for The European Railway Traffic Management System" >
+  <excerpt>Signallers determine the fault and failure impact on train service and operation.</excerpt>
+</document_reference>
+<document_reference name="Combine Workstations" contributor="Amna Altaf" document="Understanding Railway Signaller Tasks and Operations" >
+  <excerpt>Signaller combines signalling control areas known as workstations.
+</excerpt>
+</document_reference>
+<document_reference name="Grant Possessions and Isolation for Service" contributor="Amna Altaf" document="Understanding Railway Signaller Tasks and Operations" >
+  <excerpt>Signaller grants possessions and isolation after combining signalling control areas known as workstations between 0030 to 0530hrs.
+</excerpt>
+</document_reference>
+<document_reference name="Maintain Operations Log" contributor="Amna Altaf" document="Understanding Railway Signaller Tasks and Operations" >
+  <excerpt>Signaller keeps operations log/ telegram journal during job hours.
+</excerpt>
+</document_reference>
+<document_reference name="Normal Service Delivery" contributor="Amna Altaf" document="Understanding Railway Signaller Tasks and Operations" >
+  <excerpt>Signaller reverts as planned to default control areas for normal service delivery.
+</excerpt>
+</document_reference>
+<document_reference name="Regulator Intervention" contributor="Amna Altaf" document="Understanding Railway Signaller Tasks and Operations" >
+  <excerpt>Signaller desires to regulate intervention limited to selecting options between terminating short, stock short form and re-platforming.
+</excerpt>
+</document_reference>
+<document_reference name="Manual Train Routing" contributor="Amna Altaf" document="Understanding Railway Signaller Tasks and Operations" >
+  <excerpt>Signalman has to manually route trains under special circumstances like delays or un-forseen emergencies etc.
+</excerpt>
+</document_reference>
+<document_reference name="Stock Positioning" contributor="Amna Altaf" document="Understanding Railway Signaller Tasks and Operations" >
+  <excerpt>Signalman desires stock positioning for trains running on ERTMS/ ARS.
+</excerpt>
+</document_reference>
+<document_reference name="Grant Off-Peak Blockage" contributor="Amna Altaf" document="Understanding Railway Signaller Tasks and Operations" >
+  <excerpt>Signalman desires to grant off-peak blockage of station platforms for cleaning.
+</excerpt>
+</document_reference>
+<document_reference name="Conflict Prediction and Resolution" contributor="Amna Altaf" document="Understanding Railway Signaller Tasks and Operations" >
+  <excerpt>Signalman desires to predict capacity of traffic management element of the ERTMS using conflict and resolution functionality.
+</excerpt>
+</document_reference>
+<document_reference name="Issue Temporary Timetable" contributor="Amna Altaf" document="Understanding Railway Signaller Tasks and Operations" >
+  <excerpt>SIgnalman desires to provide modified temporary timetable (involving cancellations) until fault rectified.
+</excerpt>
+</document_reference>
+<document_reference name="Test Back-up Facilities" contributor="Amna Altaf" document="Understanding Railway Signaller Tasks and Operations" >
+  <excerpt>Signalman desires to conduct planned test of back-up facilities.
+</excerpt>
+</document_reference>
+<document_reference name="Operational Planning" contributor="Amna Altaf" document="Understanding Railway Signaller Tasks and Operations" >
+  <excerpt>Signalman needs to perform operational planning function according to ERTMS/ ARS.
+</excerpt>
+</document_reference>
+<document_reference name="Run Route Availability" contributor="Amna Altaf" document="Understanding Railway Signaller Tasks and Operations" >
+  <excerpt>Signalman performs route availability functions as verified by Operational Planning.
+</excerpt>
+</document_reference>
+<document_reference name="Run Sectional Running Time" contributor="Amna Altaf" document="Understanding Railway Signaller Tasks and Operations" >
+  <excerpt>Signalman performs sectional running time functions as verified by Operational Planning.
+</excerpt>
+</document_reference>
+<document_reference name="Establish Order of Implementation" contributor="Amna Altaf" document="Understanding Railway Signaller Tasks and Operations" >
+  <excerpt>Signalman plans to log order of implementation ahead of service run down.
+</excerpt>
+</document_reference>
+<persona_characteristic persona="Neil" behavioural_variable="Activities" modal_qualifier="Perhaps" >
+  <definition>Supervision of Train Drivers</definition>
+  <grounds type="document" reference="Authorise Operations to Train Driver " />
+  <grounds type="document" reference="Correlate Drivers Reported Position with Track Location" />
+  <grounds type="document" reference="European Vital Computer - Supervision of Driver and Train Movement" />
+  <warrant type="document" reference="Grant Driving Mode to Train Driver" />
+</persona_characteristic>
+<persona_characteristic persona="Neil" behavioural_variable="Activities" modal_qualifier="Perhaps" >
+  <definition>Responsible for Monitoring and Controlling Train Movement</definition>
+  <grounds type="document" reference="Safe and Efficient Management of Train Movement" />
+  <warrant type="document" reference="Signallers Authority to Advice Movement" />
+  <warrant type="document" reference="Signallers Workstation - Enable the Signaller to Safely and Efficiently Monitor and Control Trains" />
+</persona_characteristic>
+<persona_characteristic persona="Neil" behavioural_variable="Activities" modal_qualifier="Therefore" >
+  <definition>Make Route Decisions for Train Movement</definition>
+  <grounds type="document" reference="Initiate Cancellation of Route" />
+  <grounds type="document" reference="Ensure Line is Safe for Operation" />
+  <warrant type="document" reference="Train Route Setting" />
+</persona_characteristic>
+<persona_characteristic persona="Neil" behavioural_variable="Activities" modal_qualifier="Perhaps" >
+  <definition>Routine Tasks and Operational Log Maintainence</definition>
+  <grounds type="document" reference="Combine Workstations" />
+  <grounds type="document" reference="Grant Possessions and Isolation for Service" />
+  <grounds type="document" reference="Normal Service Delivery" />
+  <grounds type="document" reference="Regulator Intervention" />
+  <grounds type="document" reference="Stock Positioning" />
+  <grounds type="document" reference="Grant Off-Peak Blockage" />
+  <grounds type="document" reference="Conflict Prediction and Resolution" />
+  <grounds type="document" reference="Issue Temporary Timetable" />
+  <grounds type="document" reference="Test Back-up Facilities" />
+  <grounds type="document" reference="Operational Planning" />
+  <grounds type="document" reference="Establish Order of Implementation" />
+  <warrant type="document" reference="Maintain Operations Log" />
+  <warrant type="document" reference="Run Route Availability" />
+  <warrant type="document" reference="Run Sectional Running Time" />
+</persona_characteristic>
+<persona_characteristic persona="Neil" behavioural_variable="Activities" modal_qualifier="Perhaps" >
+  <definition>Sending of Train Data</definition>
+  <grounds type="document" reference="Train Data Reception from Driver" />
+  <grounds type="document" reference="Route and Other Train Operations" />
+</persona_characteristic>
+<persona_characteristic persona="Neil" behavioural_variable="Activities" modal_qualifier="Perhaps" >
+  <definition>Perform Manual Routing</definition>
+  <grounds type="document" reference="Initiate Cancellation of Route" />
+  <grounds type="document" reference="Control Movement of Trains" />
+  <grounds type="document" reference="ERTMS Must Not Disturb Normal Regulation of Trains" />
+  <grounds type="document" reference="Manual Train Routing" />
+  <grounds type="document" reference="Issue Temporary Timetable" />
+  <warrant type="document" reference="Signallers Reverted to Manual Routing for Service" />
+</persona_characteristic>
+<persona_characteristic persona="Neil" behavioural_variable="Activities" modal_qualifier="Perhaps" >
+  <definition>Issue Fleet Plan to Train Driver</definition>
+  <grounds type="document" reference="Provide Train Location Information for Fleet Management" />
+  <grounds type="document" reference="Validation of Train Position" />
+  <grounds type="document" reference="Driver Advisory Information (Driver ID, Train Running Number)" />
+</persona_characteristic>
+<persona_characteristic persona="Neil" behavioural_variable="Aptitudes" modal_qualifier="Hence" >
+  <definition>Verify TSR Sent to DMI</definition>
+  <grounds type="document" reference="TSR not Displayed on DMI" />
+  <grounds type="document" reference="TSR Not Sent to DMI" />
+  <grounds type="document" reference="TSR Sent by Level 2 ERTMS Signalling System" />
+</persona_characteristic>
+<persona_characteristic persona="Neil" behavioural_variable="Aptitudes" modal_qualifier="Perhaps" >
+  <definition>IT Fault Reported to Technicians</definition>
+  <grounds type="document" reference="Train Driver Reported Fault based on DMI" />
+  <grounds type="document" reference="Control Room Found Missing Speed Limit Information on Trains" />
+</persona_characteristic>
+<persona_characteristic persona="Neil" behavioural_variable="Aptitudes" modal_qualifier="Therefore" >
+  <definition>Impact and Response Determination for Faults and Failures</definition>
+  <grounds type="document" reference="Trains to Move Following Recover from System Failure" />
+  <grounds type="document" reference="Inform Nature of Failure" />
+  <grounds type="document" reference="Management of ERTMS Failures" />
+  <grounds type="document" reference="Determine Response for Faults" />
+  <grounds type="document" reference="Fault and Failure Impact on Train Operations" />
+</persona_characteristic>
+<persona_characteristic persona="Neil" behavioural_variable="Aptitudes" modal_qualifier="Perhaps" >
+  <definition>Vigilance During Signalling Operations to Avoid Hazards</definition>
+  <grounds type="document" reference="Control if Used Incorrectly Could Lead to a Hazardous event" />
+  <grounds type="document" reference="Efficient Regulation of Trains" />
+  <rebuttal type="document" reference="Signaller Verify Correct Uploading of TSR" />
+</persona_characteristic>
+<persona_characteristic persona="Neil" behavioural_variable="Aptitudes" modal_qualifier="Therefore" >
+  <definition>Responsible for Fault Identification and Ensure Safe Operations</definition>
+  <grounds type="document" reference="Overseeing Safe Operations" />
+  <warrant type="document" reference="Identify Faults that have Significant Impact on Safety" />
+</persona_characteristic>
+<persona_characteristic persona="Neil" behavioural_variable="Attitudes" modal_qualifier="Perhaps" >
+  <definition>Rescheduling of Train Operations</definition>
+  <grounds type="document" reference="Maintain Railway Undertaking incase of Divergance in Planned Data" />
+  <grounds type="document" reference="Update and Rescheduling Train Operations" />
+  <grounds type="document" reference="Issue Temporary Timetable" />
+</persona_characteristic>
+<persona_characteristic persona="Neil" behavioural_variable="Attitudes" modal_qualifier="Hence" >
+  <definition>Signallers Job to Supervise Train Drivers</definition>
+  <grounds type="document" reference="Degraded Operation - Permission for Train Driver to Proceed" />
+  <grounds type="document" reference="Planning Information for DMI" />
+  <warrant type="document" reference="Highest Level of Supervision - Design, Maintain and Operate" />
+</persona_characteristic>
+<persona_characteristic persona="Neil" behavioural_variable="Attitudes" modal_qualifier="Perhaps" >
+  <definition>Traffic Information for Incident Investigation</definition>
+  <grounds type="document" reference="GSM-R Status and Recorded Traffic Information " />
+  <warrant type="document" reference="Maintain Status of Trackside System for Incident Investigation" />
+</persona_characteristic>
+<persona_characteristic persona="Neil" behavioural_variable="Motivations" modal_qualifier="Therefore" >
+  <definition>Maximum Efforts to Minimise Hazardous Events</definition>
+  <grounds type="document" reference="ERTMS Standard Defines Train Data" />
+  <grounds type="document" reference="Control if Used Incorrectly Could Lead to a Hazardous event" />
+  <grounds type="document" reference="Definite and Sustained Action" />
+  <grounds type="document" reference="Close Barriers or Gates to Road Traffic" />
+  <grounds type="document" reference="Realise an Error Beforehand" />
+</persona_characteristic>
+<persona_characteristic persona="Neil" behavioural_variable="Motivations" modal_qualifier="Therefore" >
+  <definition>Advise Train Drivers on Train Movement</definition>
+  <grounds type="document" reference="Signallers Authority to Advice Movement" />
+  <grounds type="document" reference="Alerts to Train Driver About Changes in Supervision, Errors and Warnings" />
+  <grounds type="document" reference="Information to Drivers About Speed Limit, Position and Alerts" />
+  <grounds type="document" reference="Instruct the ERTMS Mode" />
+  <grounds type="document" reference="Signalling Information Display on DMI" />
+</persona_characteristic>
+<persona_characteristic persona="Neil" behavioural_variable="Motivations" modal_qualifier="Hence" >
+  <definition>Signalling Management System for Train Movement</definition>
+  <grounds type="document" reference="Overseeing Safe Operations" />
+  <grounds type="document" reference="Control, Command and Technical Specifications for Interoperability" />
+  <grounds type="document" reference="GSM-Radio - Global System for Mobile Communication" />
+  <grounds type="document" reference="Increased Network Capacity, Flexibility and Capability" />
+  <warrant type="document" reference="Optimised Network Capacity" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Activities" modal_qualifier="Perhaps" >
+  <definition>Get Task Routine and Rule Updates</definition>
+  <grounds type="document" reference="Book on and Get Latest Information" />
+  <grounds type="document" reference="Train Driver Receives Work Orders" />
+  <grounds type="document" reference="Forward Train Running Number to GSM-R" />
+  <grounds type="document" reference="Send Position Report to Signaller" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Activities" modal_qualifier="Perhaps" >
+  <definition>Train Preparation Orders for Operation</definition>
+  <grounds type="document" reference="Drivers Book Depot" />
+  <grounds type="document" reference="Receives Documentation About Train Preparation" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Activities" modal_qualifier="Perhaps" >
+  <definition>Perform Self Test and Issue Failure Report</definition>
+  <grounds type="document" reference="ETCS Performs Self Test Function" />
+  <grounds type="document" reference="Onboard ETCS Self Test for Finding Faults and Failures" />
+  <warrant type="document" reference="Failure Report - Safe and Fit for Train Service" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Activities" modal_qualifier="Therefore" >
+  <definition>Observe and Operate According to Movement Authority</definition>
+  <grounds type="document" reference="Movement Authority Messages are Displayed on DMI" />
+  <warrant type="document" reference="Driver Observes a Signal for Movement Authority" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Activities" modal_qualifier="Perhaps" >
+  <definition>Train Operational Control with ERTMS Driver Machine Interface</definition>
+  <grounds type="document" reference="Train Drivers Cab has Information on DMI" />
+  <grounds type="document" reference="Route Information Displayed" />
+  <grounds type="document" reference="Actual Train Speed Displayed to Driver" />
+  <warrant type="document" reference="ERTMS DMI - Enter Data in On-board System" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Activities" modal_qualifier="Perhaps" >
+  <definition>Control Accidents</definition>
+  <grounds type="document" reference="Danger Signal to be Observed" />
+  <grounds type="document" reference="Stop Train in Emergency" />
+  <grounds type="document" reference="ERTMS Reset Available to Driver" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Activities" modal_qualifier="Therefore" >
+  <definition>Responsibility to Identify End of Authority</definition>
+  <grounds type="document" reference="Control, Command and Technical Specifications for Interoperability" />
+  <grounds type="document" reference="Control Movement of Trains" />
+  <warrant type="document" reference="Identify End of Authority" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Aptitudes" modal_qualifier="Perhaps" >
+  <definition>Driver Distraction may Lead to Hazards</definition>
+  <grounds type="document" reference="Hazards of Driver Distraction through Text Messages" />
+  <grounds type="document" reference="Text Messages Generated to Driver" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Aptitudes" modal_qualifier="Perhaps" >
+  <definition>Ultimate Dependence on DMI for Train Regulations</definition>
+  <grounds type="document" reference="Reliability and Availability on DMI for Operation" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Aptitudes" modal_qualifier="Perhaps" >
+  <definition>Implementation of ERTMS Levels for Train Movement </definition>
+  <grounds type="document" reference="Level 0 - No Supervisory Information Displayed" />
+  <grounds type="document" reference="Level 1 - Overlay of Underlying Signalling System" />
+  <grounds type="document" reference="Level 2 - Radio Based System" />
+  <warrant type="document" reference="Level NTC - Safe Movement for Train" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Aptitudes" modal_qualifier="Perhaps" >
+  <definition>Maintain Vigilance and an Awareness of Events</definition>
+  <grounds type="document" reference="Active State of Mind" />
+  <warrant type="document" reference="Control Movement of Trains" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Aptitudes" modal_qualifier="Perhaps" >
+  <definition>Timely Fault Recognition by Driver</definition>
+  <grounds type="document" reference="Fault Recognition by Train Driver" />
+  <grounds type="document" reference="Information to Drivers About Speed Limit, Position and Alerts" />
+  <warrant type="document" reference="Train Driver Reported Fault based on DMI" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Aptitudes" modal_qualifier="Therefore" >
+  <definition>Excessive Speed Observed by Driver</definition>
+  <grounds type="document" reference="Train on Normal Route Travelling at Excessive Speed" />
+  <grounds type="document" reference="Train Driving at Three Times its Actual Speed" />
+  <rebuttal type="document" reference="Actual Train Speed Displayed to Driver" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Attitudes" modal_qualifier="Perhaps" >
+  <definition>On-board Equipment Reveals Driver Advisory Information</definition>
+  <grounds type="document" reference="Driving Cab Connected to ERTMS On-board Equipment" />
+  <grounds type="document" reference="Messages Passed Between Trackside and On-board Equipment" />
+  <warrant type="document" reference="Driver Advisory Information (Driver ID, Train Running Number)" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Attitudes" modal_qualifier="Therefore" >
+  <definition>No Mistakes while Interpreting ERTMS Stop Markers</definition>
+  <grounds type="document" reference="ERTMS Stop Markers" />
+  <warrant type="document" reference="Driver Misreading Stop Markers" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Attitudes" modal_qualifier="Therefore" >
+  <definition>Upon IT Failure the Driver Reverted to Manual Routing</definition>
+  <grounds type="document" reference="IT Failure lead a Train to Exceed Speed Limit" />
+  <grounds type="document" reference="Fault Recognition by Train Driver" />
+  <grounds type="document" reference="ERTMS Must Not Disturb Normal Regulation of Trains" />
+  <warrant type="document" reference="Train Driver Conducting Manual Routing" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Attitudes" modal_qualifier="Perhaps" >
+  <definition>Check ERTMS On-board Equipment and Cab Before Operating</definition>
+  <grounds type="document" reference="Enter Leading Cab and Open Desk" />
+  <grounds type="document" reference="ERTMS Standard Defines Train Data" />
+  <grounds type="document" reference="Driving Cab Connected to ERTMS On-board Equipment" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Attitudes" modal_qualifier="Therefore" >
+  <definition>Operational Control Decisions based on Displayed Information</definition>
+  <grounds type="document" reference="Alerts to Train Driver About Changes in Supervision, Errors and Warnings" />
+  <grounds type="document" reference="Information to Drivers About Speed Limit, Position and Alerts" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Attitudes" modal_qualifier="Perhaps" >
+  <definition>Loss of Signals may Compromise Drivers Job</definition>
+  <grounds type="document" reference="Messages Transmitted via GSM-R" />
+  <grounds type="document" reference="Momentary Loss of Signals" />
+  <grounds type="document" reference="RBC - Generates Messages" />
+  <warrant type="document" reference="Data Packets Containing Information on Operation of Train" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Attitudes" modal_qualifier="Therefore" >
+  <definition>Takes Action Based on Signallers Directive</definition>
+  <grounds type="document" reference="Degraded Operation - Permission for Train Driver to Proceed" />
+  <grounds type="document" reference="Instruct the ERTMS Mode" />
+  <grounds type="document" reference="Driver Observes a Signal for Movement Authority" />
+  <warrant type="document" reference="Permitted Speed Displayed on DMI" />
+  <warrant type="document" reference="Fault and Failure Indication to Driver" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Attitudes" modal_qualifier="Therefore" >
+  <definition>Identification of Train for Service</definition>
+  <grounds type="document" reference="Driver Receives Cargo Manifestation" />
+  <warrant type="document" reference="Fleet Plan - Train Running Number for Identifcation of Train for Service" />
+</persona_characteristic>
+<persona_characteristic persona="Ray" behavioural_variable="Attitudes" modal_qualifier="Perhaps" >
+  <definition>Fault Reported to Signalman upon Over-Speeding </definition>
+  <grounds type="document" reference="Permitted Speed Displayed on DMI" />
+  <grounds type="document" reference="Train Driver Passed Over at Excessive Speed" />
+  <warrant type="document" reference="Train Driver Reports Fault to Signalman" />
+</persona_characteristic>
+<task name="Booking Depot and Train Preparation" code="Train Preparation" author="Amna Altaf" assumption_task="FALSE" >
+  <objective>Train driver identifies train for service and gets 'Fleet Plan', which contains train running number and other cargo manifest documentation for service.</objective>
+  <task_environment name="Peak Hours" >
+    <dependencies>Train Driver needs fleet plan for proceeding.</dependencies>
+    <task_persona persona="Ray" duration="Minutes" frequency="Daily_-_Weekly" demands="High" goal_conflict="Low" />
+    <narrative>The Train Driver gets update about his job. 
+He enters driving cab and gets train booking information for service. 
+He identifies train for service and gets fleet plan. 
+The 'Fleet Plan' contains train running number and other cargo manifest documentation for proceeding his driving job.</narrative>
+    <consequences>The train driver begins his driving operation for the duration of service.</consequences>
+    <benefits>The passengers are taken from one platform to another (destination).</benefits>
+  </task_environment>
+</task>
+<task name="Perform ETCS Self-Test Function" code="Self-Test Function" author="Amna Altaf" assumption_task="FALSE" >
+  <objective>The Train Driver performs European Train Control System (ETCS) self-test function and produces 'Failure Report' for status of train.</objective>
+  <task_environment name="Peak Hours" >
+    <dependencies>The train driver produces 'Failure Report' for status of train.</dependencies>
+    <task_persona persona="Ray" duration="Minutes" frequency="Daily_-_Weekly" demands="Medium" goal_conflict="None" />
+    <narrative>The train driver performs European Train Control System (ETCS) self-test function for finding faults and failures in train for service.
+He produces a 'Failure Report' for status of train.
+He proceeds only if the status of train is 'Safe and Fit'.</narrative>
+    <consequences>The 'Safe and Fit' status is required to ensure safety of passengers and staff.</consequences>
+    <benefits>In order to avoid any catastrophic consequences.</benefits>
+  </task_environment>
+</task>
+<task name="Driver Advisory Information on ERTMS-DMI" code="Driver Advisory Information" author="Amna Altaf" assumption_task="FALSE" >
+  <objective>The train driver gets driver advisory information on European Railway Traffic Management System - Driver Machine Interface (ERTMS-DMI) for proceeding. </objective>
+  <task_environment name="Peak Hours" >
+    <dependencies>The train driver needs driver advisory information for proceeding.</dependencies>
+    <task_persona persona="Ray" duration="Hours_or_longer" frequency="Hourly_or_more" demands="Medium" goal_conflict="Low" />
+    <narrative>The train driver manages his operations by the help of Driver Machine Interface (DMI) in his driving cab.
+The DMI is based on European Railway Traffic Management System (ERTMS).
+The driver will get driver advisory information like driver ID, train running number etc on his DMI.
+The driver will proceed.</narrative>
+    <consequences>DMI will help driver to proceed his operations.</consequences>
+    <benefits>The train service will continue.</benefits>
+  </task_environment>
+</task>
+<task name="Directives from Signaller - Movement Authority" code="Movement Authority" author="Amna Altaf" assumption_task="FALSE" >
+  <objective>The train gets directives from signaller including movement authority for  safe movement of trains.</objective>
+  <task_environment name="Peak Hours" >
+    <dependencies>The train driver needs movement authority signals.</dependencies>
+    <task_persona persona="Ray" duration="Hours_or_longer" frequency="Hourly_or_more" demands="High" goal_conflict="Low" />
+    <narrative>The train driver gets directive from signaller.
+The directives include train route and maximum speed allowed etc on his DMI.
+The signaller also advises ERTMS mode.
+The train driver takes action based on movement authority for safe movement of trains.</narrative>
+    <consequences>Ensure safe movement of trains for passengers and other staff.</consequences>
+    <benefits>Successful operations.</benefits>
+  </task_environment>
+</task>
+<task name="Observes Excessive Speed" code="Observation" author="Amna Altaf" assumption_task="FALSE" >
+  <objective>The train driver observes over-speeding while approaching a level-crossing.</objective>
+  <task_environment name="Peak Hours" >
+    <dependencies>The lives of passengers and staff are dependent on train drivers operation.</dependencies>
+    <task_persona persona="Ray" duration="Seconds" frequency="Hourly_or_more" demands="Low" goal_conflict="Low" />
+    <narrative>The train driver observes the train is proceeding at 80km/h rather than 30km/h on his route.
+The train was driving three times its actual speed at a level-crossing.</narrative>
+    <consequences>Avoid any catastrophic consequences.</consequences>
+    <benefits>Ensure safe movement of train.</benefits>
+  </task_environment>
+</task>
+<task name="Timely Fault Recognition" code="Fault Recognition" author="Amna Altaf" assumption_task="FALSE" >
+  <objective>The train driver recognized fault based on information displayed on his DMI.</objective>
+  <task_environment name="Peak Hours" >
+    <dependencies>The information displayed on DMI.</dependencies>
+    <task_persona persona="Ray" duration="Minutes" frequency="Monthly_or_less" demands="High" goal_conflict="Medium" />
+    <narrative>The train drivers remains vigilant during his job and recognizes fault.</narrative>
+    <consequences>The lives of on-board passengers and staff is critical.</consequences>
+    <benefits>Ensure safe movement.</benefits>
+  </task_environment>
+</task>
+<task name="Fault Reported to Signaller" code="Fault Reported" author="Amna Altaf" assumption_task="FALSE" >
+  <objective>The train driver reported fault to signaller.</objective>
+  <task_environment name="Peak Hours" >
+    <dependencies>The train driver communicates with signaller using DMI.</dependencies>
+    <task_persona persona="Ray" duration="Seconds" frequency="Monthly_or_less" demands="Low" goal_conflict="High" />
+    <narrative>The train driver observed fault and reported to signaller using ERTMS DMI.</narrative>
+    <consequences>The fault is reported to signaller for timely solution.</consequences>
+    <benefits>Ensure safe movement of train.</benefits>
+  </task_environment>
+</task>
+<task name="Manual Routing" code="Manual Routing" author="Amna Altaf" assumption_task="FALSE" >
+  <objective>The train driver reverted to manual routing upon identification of fault.</objective>
+  <task_environment name="Peak Hours" >
+    <dependencies>The signaller also coordinated for manual routing.</dependencies>
+    <task_persona persona="Ray" duration="Seconds" frequency="Hourly_or_more" demands="Medium" goal_conflict="Low" />
+    <narrative>The train driver reverted to manual routing after recognition of fault.
+The fault was IT in nature.</narrative>
+    <consequences>Ensure the service continues.</consequences>
+    <benefits>In order to not disturb the normal service of train.</benefits>
+  </task_environment>
+</task>
+<task name="Take Operational Control Decisions" code="Operational Control" author="Amna Altaf" assumption_task="FALSE" >
+  <objective>The train driver takes operational control decisions like speed limit, train positions, ERTMS mode, isolation mode, identify EoA, reset etc.</objective>
+  <task_environment name="Peak Hours" >
+    <dependencies>Train driver needs ERTMS DMI for operational control decisions.</dependencies>
+    <task_persona persona="Ray" duration="Minutes" frequency="Hourly_or_more" demands="Medium" goal_conflict="Low" />
+    <narrative>The train driver takes operational control decisions using DMI.
+This includes speed limit,
+train positions,
+ERTMS mode,
+switching of isolation mode,
+identification of End of Authority (EoA),
+ERTMS reset etc.</narrative>
+    <consequences>Safe and efficient movement of trains.</consequences>
+    <benefits>The train driver has a hug responsibility for controlling movement of trains containing passengers.</benefits>
+  </task_environment>
+</task>
+<task name="Observe Signals for Danger and Stop Immediately" code="Observe and Stop" author="Amna Altaf" assumption_task="FALSE" >
+  <objective>The train driver observes signals for danger and terminates operation.</objective>
+  <task_environment name="Peak Hours" >
+    <dependencies>The train driver needs directives and signals of danger from signaller.</dependencies>
+    <task_persona persona="Ray" duration="Hours_or_longer" frequency="Daily_-_Weekly" demands="High" goal_conflict="High" />
+    <narrative>The train driver keeps on observing signals for danger.
+In case of danger, the text messages are sent to driver from signaller.
+The train driver immediately terminates service to avoid any accidents.</narrative>
+    <consequences>Sometimes, the text messages may cause distraction.</consequences>
+    <benefits>Avoid any catastrophic consequences or accidents.</benefits>
+  </task_environment>
+</task>
+<task name="Monitor from Signalman Workstation" code="Monitor and Control" author="Amna Altaf" assumption_task="FALSE" >
+  <objective>Signalman working from his signaller's workstation is responsible for monitoring and controlling train movements.</objective>
+  <task_environment name="Peak Hours" >
+    <dependencies>Signalman needs his workstation to operate.</dependencies>
+    <task_persona persona="Neil" duration="Hours_or_longer" frequency="Hourly_or_more" demands="Medium" goal_conflict="Low" />
+    <narrative>It is signalman's job to monitor and control train movement.</narrative>
+    <consequences>Ensure safe and efficient operations.</consequences>
+    <benefits>Passenger and staff safety.</benefits>
+  </task_environment>
+</task>
+<task name="Routine Tasks and Operational Planning" code="Routine Tasks" author="Amna Altaf" assumption_task="FALSE" >
+  <objective>Signalman begins his job by performing his routine tasks and making other operational planning decisions.</objective>
+  <task_environment name="Peak Hours" >
+    <dependencies>Signalman's routine tasks for performing job.</dependencies>
+    <task_persona persona="Neil" duration="Hours_or_longer" frequency="Daily_-_Weekly" demands="Medium" goal_conflict="Medium" />
+    <narrative>Signalman begins his routine tasks by granting possession and isolation, maintaining operations log, ensuring normal service delivery, regulator intervention, manual routing, stock positioning, granting off-peak blockage, conflict prediction and resolution, issuing temporary timetable, testing back-up facilities, running route availability, running sectional time, establishing order of implementation and other operational planning decisions.</narrative>
+    <consequences>Ensure normal deliver of service.</consequences>
+    <benefits>Perform the job of railway signalman.</benefits>
+  </task_environment>
+</task>
+<task name="Administration of Train Driver" code="Administration amd Supervision" author="Amna Altaf" assumption_task="FALSE" >
+  <objective>Signalman is responsible for the administration of train drivers, by issuing them fleet plan, ERTMS mode, speed restrictions, alerts etc.</objective>
+  <task_environment name="Peak Hours" >
+    <dependencies>Issue a fleet plan.</dependencies>
+    <task_persona persona="Neil" duration="Minutes" frequency="Daily_-_Weekly" demands="High" goal_conflict="Medium" />
+    <narrative>Signalman is responsible for the administration of train drivers, by issuing them fleet plan for keeping track of train positions and locations.
+He has to advise train drivers regarding their movement, maximum speed and ERTMS mode required. 
+In case of emergency, he also has to alert the train drivers. 
+Also, has to manage the closing of barriers and gates to road traffic.</narrative>
+    <consequences>Ensure train drivers are informed about fleet plan.</consequences>
+    <benefits>Ensure normal service of delivery.</benefits>
+  </task_environment>
+</task>
+<task name="Route Setting by Sending Train Data" code="Route Settings" author="Amna Altaf" assumption_task="FALSE" >
+  <objective>Signalman has to make route decisions by sending train data to DMI for train movement and ensure safety. </objective>
+  <task_environment name="Peak Hours" >
+    <dependencies>Signalman updates the route settings on DMI.  </dependencies>
+    <task_persona persona="Neil" duration="Minutes" frequency="Hourly_or_more" demands="High" goal_conflict="Medium" />
+    <narrative>Signalman updates the route settings on Driver Machine Interface (DMI) as a part of European Railway Traffic Management System (ERTMS) signalling control operations. </narrative>
+    <consequences>Informs driver about route settings.</consequences>
+    <benefits>Ensure normal delivery of service.</benefits>
+  </task_environment>
+</task>
+<task name="Send Movement Authority" code="Movement Authority" author="Amna Altaf" assumption_task="FALSE" >
+  <objective>The train drivers precede their journey, based on directives known as movement authority from signallers.</objective>
+  <task_environment name="Peak Hours" >
+    <dependencies>GSM-R for sending data packets including movement authority.</dependencies>
+    <task_persona persona="Neil" duration="Hours_or_longer" frequency="Daily_-_Weekly" demands="High" goal_conflict="Low" />
+    <narrative>Signaller is supervising train drivers. The train drivers precede their journey, based on directives known as movement authority from signallers.</narrative>
+    <consequences>Movement authority contains information for train drivers.</consequences>
+    <benefits>Ensure delivery of service.</benefits>
+  </task_environment>
+</task>
+<task name="Incident Investigation" code="Incident Investigation" author="Amna Altaf" assumption_task="FALSE" >
+  <objective>Any incident investigation can be conducted using the traffic information kept as evidence by Signalman.
+</objective>
+  <task_environment name="Peak Hours" >
+    <dependencies>Maintain traffic log.</dependencies>
+    <task_persona persona="Neil" duration="Hours_or_longer" frequency="Monthly_or_less" demands="Low" goal_conflict="Low" />
+    <narrative>Signalman keeps record of GSM-R status of every train. 
+Any incident investigation can be conducted using the traffic information kept as evidence by Signalman.</narrative>
+    <consequences>For incident investigation.</consequences>
+    <benefits>Avoid future accidents.</benefits>
+  </task_environment>
+</task>
+<task name="Verification of TSR Upload" code="Verification of TSR" author="Amna Altaf" assumption_task="FALSE" >
+  <objective>The verification of Temporary Speed Restrictions (TSR) uploaded during routine system update is also duty of signaller.</objective>
+  <task_environment name="Peak Hours" >
+    <dependencies>Signaller has to remain vigilant.</dependencies>
+    <task_persona persona="Neil" duration="Seconds" frequency="Hourly_or_more" demands="Medium" goal_conflict="Low" />
+    <narrative>Signaller has to be vigilant while make train signalling control and operational decisions, as they may lead to hazardous events if managed poorly. 
+Similarly, the verification of Temporary Speed Restrictions (TSR) uploaded during routine system update is duty of signaller.</narrative>
+    <consequences>Fulfil safe operations.</consequences>
+    <benefits>Efficient regulation of trains.</benefits>
+  </task_environment>
+</task>
+<task name="Determine Failure Impact" code="Failure Impact" author="Amna Altaf" assumption_task="FALSE" >
+  <objective>Signalman is authorised to determine the failure impact on train operations and possible responses for these faults.</objective>
+  <task_environment name="Peak Hours" >
+    <dependencies>Inform nature of faults.</dependencies>
+    <task_persona persona="Neil" duration="Hours_or_longer" frequency="Monthly_or_less" demands="Low" goal_conflict="Low" />
+    <narrative>Signalman is authorised to inform the nature of faults identified during operation. 
+He is also authorised to determine the failure impact on train operations and possible responses for these faults. 
+</narrative>
+    <consequences>Avoid any hazardous consequences.</consequences>
+    <benefits>After recovery of trains from system failures, it is signalman's job to resume their usage. </benefits>
+  </task_environment>
+</task>
+</usability>
+
+<goals>
+<goal name="Auto Signalling Computer Restart" originator="Signalman">
+  <goal_environment name="Peak Hours" category="Achieve" priority="High" >
+    <definition>An automated signalling computer restart is scheduled to happen every evening at around 1003 hours.</definition>
+    <fit_criterion>Temporary speed restriction data to be uploaded.</fit_criterion>
+    <issue>Data may not be uploaded properly.</issue>
+  </goal_environment>
+</goal>
+<goal name="Temporary Speed Restriction Data Uploaded" originator="Signalman">
+  <goal_environment name="Peak Hours" category="Maintain" priority="High" >
+    <definition>The temporary speed restriction data to be uploaded by automated signalling computer restart for transmission of trains.</definition>
+    <fit_criterion>Transmission fulfilment.</fit_criterion>
+    <issue>Independent check is to be performed by signalman.</issue>
+  </goal_environment>
+</goal>
+<goal name="DMI Used for Operational Control Display" originator="Driver">
+  <goal_environment name="Peak Hours" category="Maximise" priority="High" >
+    <definition>Display screen for showing the speed restrictions.</definition>
+    <fit_criterion>Restrictions and other components display for transmission of trains.</fit_criterion>
+    <issue>Accurate information display.</issue>
+  </goal_environment>
+</goal>
+<goal name="First Three Passenger Train Services Operated" originator="Driver">
+  <goal_environment name="Peak Hours" category="Achieve" priority="Medium" >
+    <definition>First passenger train services on 20 Oct 2017 at 0717 hours on Cambrian Coast Line.</definition>
+    <fit_criterion>No problems with speed indication were reported by driver.</fit_criterion>
+    <issue>When the first three trains passed over the line with the missing temporary speed restrictions, none of the drivers reported any problem.</issue>
+  </goal_environment>
+</goal>
+<goal name="Fourth Passenger Train Service Operated" originator="Driver">
+  <goal_environment name="Peak Hours" category="Maintain" priority="High" >
+    <definition>Fourth passenger train service on 20 Oct 2017 at 0852 hours from Machynlleth to Pwllheli with reporting number 2J035.</definition>
+    <fit_criterion>Driver was alert during service.</fit_criterion>
+    <issue>Temporary speed restriction was not visible.</issue>
+  </goal_environment>
+</goal>
+<goal name="Reported Fault on Train 2J03 Service" originator="Driver">
+  <goal_environment name="Peak Hours" category="Improve" priority="High" >
+    <definition>The driver of train 2J03 reported a fault.</definition>
+    <fit_criterion>With information provided on DMI.</fit_criterion>
+    <issue>Train passed speed restrictions.</issue>
+  </goal_environment>
+</goal>
+<goal name="Implement a Mandatory Safety Assurance Procedure" originator="RAIB">
+  <goal_environment name="Peak Hours" category="Achieve" priority="High" >
+    <definition>Incorporate several processes and techniques from safety critical industries. </definition>
+    <fit_criterion>Modification of high-integrity software-based systems.</fit_criterion>
+    <issue>Expectation fulfilment.</issue>
+  </goal_environment>
+</goal>
+<goal name="Good Safety Management Engineering" originator="RAIB">
+  <goal_environment name="Peak Hours" category="Achieve" priority="Low" >
+    <definition>Change control in the contractual requirements as part of overall safety assurance process.</definition>
+    <fit_criterion>Required safety justifications.</fit_criterion>
+    <issue>Documentation and the traceability of safety process.</issue>
+  </goal_environment>
+</goal>
+<goal name="Robust Configuration Management" originator="RAIB">
+  <goal_environment name="Peak Hours" category="Achieve" priority="Medium" >
+    <definition>Define the required safety functions, operational context and external interfaces for assurance.</definition>
+    <fit_criterion>Capability.</fit_criterion>
+    <issue>Specifying the role of independent safety assessment bodies.</issue>
+  </goal_environment>
+</goal>
+<goal name="Use of Error Messages for Alerting Potential Failures of Safety Critical Systems" originator="RAIB">
+  <goal_environment name="Peak Hours" category="Achieve" priority="High" >
+    <definition>Use of error messages generated by internal equipment functions to alert users to potential failures of safety critical systems.</definition>
+    <fit_criterion>Implementation of suitable protection measures.</fit_criterion>
+    <issue>Design verification and validation.</issue>
+  </goal_environment>
+</goal>
+<goal name="Inclusion of Defensive Programming (SQL) to Protect Againt Unsafe State" originator="RAIB">
+  <goal_environment name="Peak Hours" category="Achieve" priority="Medium" >
+    <definition>Inclusion and subsequent validation of defensive programming during software development (SQL database).</definition>
+    <fit_criterion>Protect software from entering unsafe state.</fit_criterion>
+    <issue>Maintenance of system integrity.</issue>
+  </goal_environment>
+</goal>
+<goal name="Capture and Retention of Data for Investigating Failures" originator="RAIB">
+  <goal_environment name="Peak Hours" category="Achieve" priority="Low" >
+    <definition>Implement a procedure to ensure the capture and retention of data for investigating safety critical failures.</definition>
+    <fit_criterion>Suitable means for data collection.</fit_criterion>
+    <issue>Any crucial data which is lost.</issue>
+  </goal_environment>
+</goal>
+<goal name="Installation of Modified Equipment" originator="RAIB">
+  <goal_environment name="Peak Hours" category="Achieve" priority="Low" >
+    <definition>Include installation of additional or modified equipment for ensuring safety.</definition>
+    <fit_criterion>Consideration should be given to periodical download of data.</fit_criterion>
+    <issue>Cost required for implementation.</issue>
+  </goal_environment>
+</goal>
+<goal name="SIL to Ensure RBC Contains Correct TSR after Rollover" originator="RAIB">
+  <goal_environment name="Peak Hours" category="Achieve" priority="High" >
+    <definition>Implement the Safety Integrity Level (SIL) 4 to ensure that the Radio Block Center (RBC) on the Cambrian Coast Line contains the correct Temporary Speed Restriction (TSRs) information. </definition>
+    <fit_criterion>Restores to service after rollover.</fit_criterion>
+    <issue>Any unidentified issues with networking.</issue>
+  </goal_environment>
+</goal>
+<obstacle name="Speed Restriction Not Uploaded" originator="Signalman" >
+  <obstacle_environment name="Peak Hours" category="Integrity_Threat" >
+    <definition>The temporary speed restrictions data was not properly uploaded as a result of automated computer restart.</definition>
+    <probability value="0.5" >
+      <rationale>Unknown IT failure.</rationale>
+    </probability>
+  </obstacle_environment>
+</obstacle>
+<obstacle name="Missing Independent Check" originator="Signalman" >
+  <obstacle_environment name="Peak Hours" category="Availability_Threat" >
+    <definition>An independent check of the upload was not performed by signalman.</definition>
+    <probability value="0.2" >
+      <rationale>Not carried out by Signalman.</rationale>
+    </probability>
+  </obstacle_environment>
+</obstacle>
+<obstacle name="2J03 Passed TSR from 30km per hour to 80km per hour" originator="Driver" >
+  <obstacle_environment name="Peak Hours" category="Integrity_Threat" >
+    <definition>At around 1002 hours, train 2J03 passed TSR from 30km per hour to 80km per hour travelling between Barmouth and Llanaber.</definition>
+    <probability value="1" >
+      <rationale>TSR not uploaded.</rationale>
+    </probability>
+  </obstacle_environment>
+</obstacle>
+<obstacle name="No Indication of an Abnormal IT Condition" originator="Signalman" >
+  <obstacle_environment name="Peak Hours" category="Vulnerability" >
+    <definition>The signalman had no indication of an abnormal condition due to IT failure.</definition>
+    <probability value="0.2" >
+      <rationale>Unknown IT failure.</rationale>
+    </probability>
+  </obstacle_environment>
+</obstacle>
+<obstacle name="A1 - Collision Between Two or More Trains" originator="Driver" >
+  <obstacle_environment name="Peak Hours" category="Threat" >
+    <definition>An accident may occur which leads to collision between two or more trains.</definition>
+    <concern name="Road Traffic" />
+    <concern name="ERTMS Signalling Control System" />
+    <concern name="Trains and Trams" />
+    <concern name="Railway Tracks" />
+    <concern name="Gates and Barriers" />
+    <concern name="Railway Passengers" />
+    <concern name="Railway Staff" />
+    <concern name="Train Drivers" />
+    <probability value="0.1" >
+      <rationale>Multiple hazards like loss of operational control data for controlling trains.</rationale>
+    </probability>
+  </obstacle_environment>
+</obstacle>
+<obstacle name="A2 - Train Derailment" originator="Driver" >
+  <obstacle_environment name="Peak Hours" category="Threat" >
+    <definition>Any accident may lead to train derailment from track.</definition>
+    <concern name="Road Traffic" />
+    <concern name="Movement Authority Signals" />
+    <concern name="Odometry System" />
+    <concern name="ERTMS Driver Machine Interface" />
+    <concern name="Driver Advisory Information" />
+    <concern name="Temporary Speed Restrictions" />
+    <concern name="Railway Tracks" />
+    <concern name="Railway Passengers" />
+    <concern name="Railway Staff" />
+    <concern name="Train Drivers" />
+    <probability value="0.2" >
+      <rationale>Over-speeding etc.</rationale>
+    </probability>
+  </obstacle_environment>
+</obstacle>
+<obstacle name="H1 - Loss of Safety Critical Signalling Data on the Cambrian Coast Line" originator="Signalman" >
+  <obstacle_environment name="Peak Hours" category="Vulnerability" >
+    <definition>There is a hazard where loss of safety critical signalling data happens on the Cambrian Coast Line.</definition>
+    <concern name="GSM-R Data Radio" />
+    <concern name="Radio Block Center" />
+    <concern name="GSM-R Railway Network" />
+    <concern name="GSM-R Data Packets" />
+    <concern name="Movement Authority Signals" />
+    <concern name="GSM-R Status Record" />
+    <concern name="ERTMS Driver Machine Interface" />
+    <concern name="Train Route Information" />
+    <concern name="Driver Advisory Information" />
+    <concern name="ERTMS Signalling Control System" />
+    <probability value="0.2" >
+      <rationale>Loss of data packets during update over network.</rationale>
+    </probability>
+  </obstacle_environment>
+</obstacle>
+<obstacle name="H2 - Minimum Separation Standard Violation" originator="Driver" >
+  <obstacle_environment name="Peak Hours" category="Vulnerability" >
+    <definition>A hazard might occur if the minimum separation standard between trains is violated.</definition>
+    <concern name="Route Settings Information" />
+    <concern name="ERTMS Driver Machine Interface" />
+    <concern name="Train Route Information" />
+    <concern name="Driver Advisory Information" />
+    <concern name="Railway Passengers" />
+    <concern name="Train Drivers" />
+    <probability value="0.2" >
+      <rationale>Loss of valuable data on DMI or some technical error.</rationale>
+    </probability>
+  </obstacle_environment>
+</obstacle>
+<obstacle name="H3 - Train Enters Uncontrolled State" originator="Driver" >
+  <obstacle_environment name="Peak Hours" category="Vulnerability" >
+    <definition>Train entering any uncontrolled state might also be a hazard.</definition>
+    <concern name="ERTMS Operational Levels" />
+    <concern name="Faults and Failure Log" />
+    <concern name="Impact Log" />
+    <concern name="ERTMS Driver Machine Interface" />
+    <concern name="ERTMS Reset Button" />
+    <concern name="Warnings and Alerts" />
+    <concern name="ERTMS Signalling Control System" />
+    <concern name="ERTMS Fault and Failure Management" />
+    <concern name="ERTMS Response Management" />
+    <concern name="Railway Passengers" />
+    <probability value="0.1" >
+      <rationale>Technical issue.</rationale>
+    </probability>
+  </obstacle_environment>
+</obstacle>
+<obstacle name="H4 - Operational Planning Violation" originator="Signalman" >
+  <obstacle_environment name="Peak Hours" category="Vulnerability" >
+    <definition>Any violation during operational planning will be an hazard.</definition>
+    <concern name="ERTMS Operational Levels" />
+    <concern name="Movement Authority Signals" />
+    <concern name="Route Settings Information" />
+    <concern name="Odometry System" />
+    <concern name="Train Route Information" />
+    <concern name="Driver Advisory Information" />
+    <concern name="Temporary Speed Restrictions" />
+    <concern name="ERTMS Signalling Control System" />
+    <concern name="Signallers Workstation" />
+    <probability value="0.5" >
+      <rationale>Management or organisational issues etc.</rationale>
+    </probability>
+  </obstacle_environment>
+</obstacle>
+<obstacle name="UCA - ETCS Failure" originator="RAIB" >
+  <obstacle_environment name="Peak Hours" category="Threat" >
+    <definition>Appropriate measures to ensure capturing and retention of data useful for investigating ETCS failures, which may be classified as an unsafe control action.</definition>
+    <concern name="ERTMS Signalling Control System" />
+    <probability value="0.1" >
+      <rationale>Safety related failure.</rationale>
+    </probability>
+  </obstacle_environment>
+</obstacle>
+<obstacle name="UCA - Reliance on Procedures to Ensure TSR Application" originator="RAIB" >
+  <obstacle_environment name="Peak Hours" category="Threat" >
+    <definition>The current reliance on procedures to ensure the Temporary Speed Restrictions are applied correctly</definition>
+    <concern name="Radio Block Center" />
+    <probability value="0.5" >
+      <rationale>Following an RBC rollover.</rationale>
+    </probability>
+  </obstacle_environment>
+</obstacle>
+<usecase name="Combine Workstations" author="Amna Altaf" code="Workstations" >
+  <description>User desires to combine signalling control areas known as workstations.
+</description>
+  <actor name="Signalman" />
+  <usecase_environment name="Peak Hours" >
+    <preconditions>User combines signalling control areas as planned between 0030 to 0530hrs.
+</preconditions>
+    <flow>
+      <step number="1" description="Use case starts when user wants to combine signalling control areas known as workstations.
+" >
+      </step>
+      <step number="2" description="User follows the pre-planned schedule.
+" >
+      </step>
+      <step number="3" description="User combines the workstations via normal interface.
+" >
+      </step>
+    </flow>
+    <postconditions>User combines the workstations to grant possessions and isolation.
+</postconditions>
+  </usecase_environment>
+</usecase>
+<usecase name="Grant Possessions and Isolation" author="Amna Altaf" code="Possessions and Isolation" >
+  <description>User desires to grant possessions and isolation.
+</description>
+  <actor name="Signalman" />
+  <usecase_environment name="Peak Hours" >
+    <preconditions>User grants possessions and isolation after combining signalling control areas known as workstations between 0030 to 0530hrs.
+</preconditions>
+    <flow>
+      <step number="1" description="Use case starts when user wants to grant Possessions and Isolation.
+" >
+      </step>
+      <step number="2" description="User uses Automatic Blocking Facility.
+" >
+      </step>
+      <step number="3" description="User follows Operations Log/ Telegram Journal.
+" >
+      </step>
+      <step number="4" description="User blocks Isolated Areas using automatic Electric Traction via Train Describer Functions as recorded in Operations Log.
+" >
+      </step>
+      <step number="5" description="User grants possessions and isolation.
+" >
+      </step>
+    </flow>
+    <postconditions>User maintains Operations Log/ Telegram Journal.
+</postconditions>
+  </usecase_environment>
+</usecase>
+<usecase name="Maintain Operations Log" author="Amna Altaf" code="Operations Log" >
+  <description>User desires to maintain operations log.
+</description>
+  <actor name="Signalman" />
+  <usecase_environment name="Peak Hours" >
+    <preconditions>User keeps operations log/ telegram journal during job hours.
+</preconditions>
+    <flow>
+      <step number="1" description="Use case starts when user begins his job/ tasks for the day.
+" >
+      </step>
+      <step number="2" description="User follows the operations log. The operations log is where details of unplanned events are recorded.
+" >
+      </step>
+      <step number="3" description="User will follow either an electronic timetable for the area they are controlling or a paper extract of the timetable to allow alterations, cancellation to be entered. The log is important when handing over to a relief and for investigating delays and failures.
+" >
+      </step>
+    </flow>
+    <postconditions>User follows activities automatically updated in Operations Log.
+</postconditions>
+  </usecase_environment>
+</usecase>
+<usecase name="Normal Service Delivery" author="Amna Altaf" code="Normal Service" >
+  <description>User reverts as planned to default control areas for normal service delivery.
+</description>
+  <actor name="Train Driver" />
+  <usecase_environment name="Peak Hours" >
+    <preconditions>User wants to ensure normal service.
+</preconditions>
+    <flow>
+      <step number="1" description="Use case starts when user wants to deliver normal service during job. User has to check rolling stock is available in the correct location, monitor information provided by system(s). E.g. list of trains operating in area of control showing late running or system alarms displayed when a train is delayed. The user is reacting to system prompts, so has to have the ability to monitor information from different sources and decide whether to intervene or let the system manage train routing.
+" >
+      </step>
+      <step number="2" description="User has to revert from planned activities to default control areas.
+" >
+      </step>
+      <step number="3" description="User delivers normal service.
+" >
+      </step>
+    </flow>
+    <postconditions>User has to hand over on-going tasks to other user. Handing over to relief includes explaining the state of the railway, late running/cancellations. Any asset failures or incidents. Additional trains operating in the future, changes to the timetable that are entered in the system during the time the relief is in control.
+</postconditions>
+  </usecase_environment>
+</usecase>
+<usecase name="Regulator Intervention" author="Amna Altaf" code="Regulator Intervention" >
+  <description>User desires to regulate intervention limited to selecting options between terminating short, stock short form and re-platforming.
+</description>
+  <actor name="Signalman" />
+  <usecase_environment name="Peak Hours" >
+    <preconditions>User has to deal with trains running normally on ERTMS/ ARS with some slight perturbations and delays.
+</preconditions>
+    <flow>
+      <step number="1" description="Use case starts when user wants to regulate intervention during job.
+" >
+      </step>
+      <step number="2" description="User’s regulator intervention is limited to selecting options.
+" >
+      </step>
+      <step number="3" description="User successfully regulates intervention.
+" >
+      </step>
+    </flow>
+    <postconditions>User ensures normal service delivery.
+</postconditions>
+  </usecase_environment>
+</usecase>
+<usecase name="Conduct Manual Routing" author="Amna Altaf" code="Train Routing" >
+  <description>User desires to manually route for some trains.
+</description>
+  <actor name="Signalman" />
+  <actor name="Train Driver" />
+  <usecase_environment name="Peak Hours" >
+    <preconditions>User has to manually route trains under special circumstances like delays or un-forseen emergencies etc.
+</preconditions>
+    <flow>
+      <step number="1" description="Use case starts when user wants to manually route trains.
+" >
+      </step>
+      <step number="2" description="User cancels Automatic Route Setting for all/ selected areas.
+" >
+      </step>
+      <step number="3" description="User determines the route the train is going to take from train description.
+" >
+      </step>
+      <step number="4" description="User accesses working timetable for trains.
+" >
+      </step>
+      <step number="5" description="User sets up the route manually.
+" >
+      </step>
+    </flow>
+    <postconditions>Based on timetable and train running information from the system, or could be triggered by phone call from Control. User has to consider whether train can operate through alternative route, (assume passenger information screens are updated automatically). Navigate to signalling diagram of area or select routes from menu. Check no conflicting routes already selected. Check if other trains in area will be delayed due to train being manually routed as timetable may be overridden.
+</postconditions>
+  </usecase_environment>
+</usecase>
+<usecase name="Stock Positioning" author="Amna Altaf" code="Stock Positioning" >
+  <description>User desires stock positioning for trains running on ERTMS/ ARS.
+</description>
+  <actor name="Signalman" />
+  <usecase_environment name="Peak Hours" >
+    <preconditions>User plans for stock positioning during morning peak service between 0730 to 0900hrs.
+</preconditions>
+    <flow>
+      <step number="1" description="Use case starts when user plans stock positioning during morning peak service.
+" >
+      </step>
+      <step number="2" description="User receives data about the closest neighbours rolling stock position.
+" >
+      </step>
+      <step number="3" description="User also receives the stock position status.
+" >
+      </step>
+      <step number="4" description="User makes a decision and executes it by sending a control signal to driver.
+" >
+      </step>
+    </flow>
+    <postconditions>User ensures normal service delivery.
+</postconditions>
+  </usecase_environment>
+</usecase>
+<usecase name="Grant Off-peak Blockage" author="Amna Altaf" code="Off-Peak Blockage" >
+  <description>User desires to grant off-peak blockage of station platforms for cleaning.
+</description>
+  <actor name="Signalman" />
+  <usecase_environment name="Peak Hours" >
+    <preconditions>User follows automatically recorded operations log.
+</preconditions>
+    <flow>
+      <step number="1" description="Use case starts when user wants to grant off-peak blockage of station platforms for cleaning.
+" >
+      </step>
+      <step number="2" description="User follows automatically recorded operations log.
+" >
+      </step>
+      <step number="3" description="User completes job using electronic lockouts.
+" >
+      </step>
+      <step number="4" description="User grants off-peak blockage.
+" >
+      </step>
+    </flow>
+    <postconditions>User has to check proposed protection arrangements are correct and are entered correctly in the system. 
+</postconditions>
+  </usecase_environment>
+</usecase>
+<usecase name="Conflict Prediction and Resolution" author="Amna Altaf" code="Conflict and Resolution" >
+  <description>User desires to predict capacity of traffic management element of the ERTMS using conflict and resolution functionality.
+</description>
+  <actor name="Train Driver" />
+  <usecase_environment name="Peak Hours" >
+    <preconditions>User points out failures indicated via alarm systems for example, an over-crowded terminal station etc.
+</preconditions>
+    <flow>
+      <step number="1" description="Use case starts when user wants to predict operation conflicts.
+" >
+      </step>
+      <step number="2" description="User monitors centeralised traffic control system.
+" >
+      </step>
+      <step number="3" description="User detects potential operation conflicts.
+" >
+      </step>
+      <step number="4" description="User suggests optimal scheduling strategies for delays and deviations from timetables.
+" >
+      </step>
+    </flow>
+    <postconditions>User provides advance platforming/ routing options to minimise delay using Automatic Route Setting (ARS).
+</postconditions>
+  </usecase_environment>
+</usecase>
+<usecase name="Issue Temporary Timetable" author="Amna Altaf" code="Temporary Timetable" >
+  <description>User desires to provide modified temporary timetable (involving cancellations) until fault rectified.
+</description>
+  <actor name="Signalman" />
+  <actor name="Train Driver" />
+  <usecase_environment name="Peak Hours" >
+    <preconditions>User predicts conflict and resolution using ERTMS functionality.
+</preconditions>
+    <flow>
+      <step number="1" description="Use case starts when user has to issue temporary table under un-forseen conditions.
+" >
+      </step>
+      <step number="2" description="User monitors centeralised traffic control system.
+" >
+      </step>
+      <step number="3" description="User issues temporary timetable until issue is resolved.
+" >
+      </step>
+    </flow>
+    <postconditions>User requires signalling control area to split in order to reduce contingent workload while dealing with emergency.
+</postconditions>
+  </usecase_environment>
+</usecase>
+<usecase name="Broken Rail" author="Amna Altaf" code="Broken Rail" >
+  <description>User desires to identify broken rail on up line.
+</description>
+  <actor name="Signalman" />
+  <usecase_environment name="Peak Hours" >
+    <preconditions>User has a requirement to ensure normal service delivery.
+</preconditions>
+    <flow>
+      <step number="1" description="Use case starts when user identifies a broken rail on up line.
+" >
+      </step>
+      <step number="2" description="User identifies track circuit failure. Access will have to be arranged to the affected area. On inspection engineers may decide to implement a Temporary Speed Restriction and repair the defect when train services have finished, or repair the defect straight away.
+" >
+      </step>
+      <step number="3" description="User sends signals for stop train. Also, user will have to arrange access, agree time to compete repair. If a TSR, some trains may have to be diverted or cancelled to prevent delays to timetabled train. Timetable manager can be used to produce a plan.
+" >
+      </step>
+      <step number="4" description="User halts service until broken rail problem is solved.
+" >
+      </step>
+    </flow>
+    <postconditions>User has to ensure that traffic will be worked over one line until broken rail temporarily plated.
+</postconditions>
+  </usecase_environment>
+</usecase>
+<usecase name="Test Back-up Facilities" author="Amna Altaf" code="Back-up Facilities" >
+  <description>User desires to conduct planned test of back-up facilities.
+</description>
+  <actor name="Signalman" />
+  <actor name="Train Driver" />
+  <usecase_environment name="Peak Hours" >
+    <preconditions>User plans to conduct testing of back-up facilities using Traffic Simulator.
+</preconditions>
+    <flow>
+      <step number="1" description="Use case starts when user wants to test back-up facilities in case of failures.
+" >
+      </step>
+      <step number="2" description="User uses Traffic Simulator.
+" >
+      </step>
+      <step number="3" description="User runs test and monitors train position, speed and direction.
+" >
+      </step>
+      <step number="4" description="User makes analysis to provide enhanced resilience.
+" >
+      </step>
+    </flow>
+    <postconditions>User provides assurance of hot stand-by and maintains competencies.
+</postconditions>
+  </usecase_environment>
+</usecase>
+<usecase name="Operational Planning" author="Amna Altaf" code="Operational Planning" >
+  <description>User desires to perform functions as per Operational Planning.
+</description>
+  <actor name="Train Driver" />
+  <usecase_environment name="Peak Hours" >
+    <preconditions>User needs to perform operational planning function according to ERTMS/ ARS.
+</preconditions>
+    <flow>
+      <step number="1" description="Use case starts when user wants to do operational planning.
+" >
+      </step>
+      <step number="2" description="User defines goals and maps out strategies.
+" >
+      </step>
+      <step number="3" description="User plans for functions that need to be performed along with assignment of resources, people, technology and budget.
+" >
+      </step>
+      <step number="4" description="User logs operational planning functions.
+" >
+      </step>
+    </flow>
+    <postconditions>User aims to conduct Route Availability and Sectional Running Time after Operational Planning.
+</postconditions>
+  </usecase_environment>
+</usecase>
+<usecase name="Run Route Availability" author="Amna Altaf" code="Route Availability" >
+  <description>User desires to perform route availability.
+</description>
+  <actor name="Signalman" />
+  <usecase_environment name="Peak Hours" >
+    <preconditions>User performs route availability functions as verified by Operational Planning.
+</preconditions>
+    <flow>
+      <step number="1" description="Use case starts when user wants to run route availability.
+" >
+      </step>
+      <step number="2" description="User requires running Special Freight Trains.
+" >
+      </step>
+      <step number="3" description="User performs route availability function as logged in Operational Planning.
+" >
+      </step>
+    </flow>
+    <postconditions>User achieves safety goals by performing route availability.
+</postconditions>
+  </usecase_environment>
+</usecase>
+<usecase name="Run Sectional Running Time" author="Amna Altaf" code="Sectional Running Time" >
+  <description>User desires to perform sectional running time.
+</description>
+  <actor name="Signalman" />
+  <usecase_environment name="Peak Hours" >
+    <preconditions>User performs sectional running time functions as verified by Operational Planning.
+</preconditions>
+    <flow>
+      <step number="1" description="Use case starts when user wants to run sectional running time.
+" >
+      </step>
+      <step number="2" description="User requires running Special Freight Trains.
+" >
+      </step>
+      <step number="3" description="User performs sectional running time as logged in Operational Planning.
+" >
+      </step>
+    </flow>
+    <postconditions>User achieves performance goals by performing sectional running time.
+</postconditions>
+  </usecase_environment>
+</usecase>
+<usecase name="Establish Order of Implementation" author="Amna Altaf" code="Order of Implementation" >
+  <description>User desires to establish real-time order of implementation.
+</description>
+  <actor name="Signalman" />
+  <usecase_environment name="Peak Hours" >
+    <preconditions>User plans to log order of implementation ahead of service run down.
+</preconditions>
+    <flow>
+      <step number="1" description="Use case starts when user  wants to log real-time order of implementation.
+" >
+      </step>
+      <step number="2" description="Users calls up list of standard possessions and isolation.
+" >
+      </step>
+      <step number="3" description="User establishes real-time order of implementation.
+" >
+      </step>
+    </flow>
+    <postconditions>User maintains Operations Log/ Telegram Journal.
+</postconditions>
+  </usecase_environment>
+</usecase>
+</goals>
+
+<associations>
+<goal_association environment="Peak Hours"  goal_name="DMI Used for Operational Control Display" goal_dim="goal" ref_type="and" subgoal_name="First Three Passenger Train Services Operated" subgoal_dim="goal" alternative_id="0" >
+  <rationale>The driver starts his job.</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Fourth Passenger Train Service Operated" goal_dim="goal" ref_type="and" subgoal_name="Reported Fault on Train 2J03 Service" subgoal_dim="goal" alternative_id="0" >
+  <rationale>Fault identified during service.</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="DMI Used for Operational Control Display" goal_dim="goal" ref_type="and" subgoal_name="Fourth Passenger Train Service Operated" subgoal_dim="goal" alternative_id="0" >
+  <rationale>Fourth service operated by driver.</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Temporary Speed Restriction Data Uploaded" goal_dim="goal" ref_type="and" subgoal_name="DMI Used for Operational Control Display" subgoal_dim="goal" alternative_id="0" >
+  <rationale>Display for taking decisions.</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Auto Signalling Computer Restart" goal_dim="goal" ref_type="and" subgoal_name="Temporary Speed Restriction Data Uploaded" subgoal_dim="goal" alternative_id="0" >
+  <rationale>TSR uploaded.</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Implement a Mandatory Safety Assurance Procedure" goal_dim="goal" ref_type="and" subgoal_name="Send Movement Authority" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Robust Configuration Management" goal_dim="goal" ref_type="and" subgoal_name="Route Setting by Sending Train Data" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Good Safety Management Engineering" goal_dim="goal" ref_type="and" subgoal_name="Booking Depot and Train Preparation" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Use of Error Messages for Alerting Potential Failures of Safety Critical Systems" goal_dim="goal" ref_type="and" subgoal_name="Timely Fault Recognition" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Use of Error Messages for Alerting Potential Failures of Safety Critical Systems" goal_dim="goal" ref_type="and" subgoal_name="Fault Reported to Signaller" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Use of Error Messages for Alerting Potential Failures of Safety Critical Systems" goal_dim="goal" ref_type="and" subgoal_name="Manual Routing" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Good Safety Management Engineering" goal_dim="goal" ref_type="and" subgoal_name="Take Operational Control Decisions" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Capture and Retention of Data for Investigating Failures" goal_dim="goal" ref_type="and" subgoal_name="Routine Tasks and Operational Planning" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="SIL to Ensure RBC Contains Correct TSR after Rollover" goal_dim="goal" ref_type="and" subgoal_name="Driver Advisory Information on ERTMS-DMI" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="SIL to Ensure RBC Contains Correct TSR after Rollover" goal_dim="goal" ref_type="and" subgoal_name="Directives from Signaller - Movement Authority" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Installation of Modified Equipment" goal_dim="goal" ref_type="and" subgoal_name="Observes Excessive Speed" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Capture and Retention of Data for Investigating Failures" goal_dim="goal" ref_type="and" subgoal_name="Observe Signals for Danger and Stop Immediately" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Robust Configuration Management" goal_dim="goal" ref_type="and" subgoal_name="Monitor from Signalman Workstation" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Good Safety Management Engineering" goal_dim="goal" ref_type="and" subgoal_name="Administration of Train Driver" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Implement a Mandatory Safety Assurance Procedure" goal_dim="goal" ref_type="and" subgoal_name="Driver Advisory Information on ERTMS-DMI" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="SIL to Ensure RBC Contains Correct TSR after Rollover" goal_dim="goal" ref_type="and" subgoal_name="Verification of TSR Upload" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Installation of Modified Equipment" goal_dim="goal" ref_type="and" subgoal_name="Verification of TSR Upload" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Capture and Retention of Data for Investigating Failures" goal_dim="goal" ref_type="and" subgoal_name="Incident Investigation" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Inclusion of Defensive Programming (SQL) to Protect Againt Unsafe State" goal_dim="goal" ref_type="and" subgoal_name="Determine Failure Impact" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Robust Configuration Management" goal_dim="goal" ref_type="and" subgoal_name="Routine Tasks and Operational Planning" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Good Safety Management Engineering" goal_dim="goal" ref_type="and" subgoal_name="Observe Signals for Danger and Stop Immediately" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Implement a Mandatory Safety Assurance Procedure" goal_dim="goal" ref_type="and" subgoal_name="Perform ETCS Self-Test Function" subgoal_dim="task" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Auto Signalling Computer Restart" goal_dim="goal" ref_type="obstruct" subgoal_name="No Indication of an Abnormal IT Condition" subgoal_dim="obstacle" alternative_id="0" >
+  <rationale>No way of determining IT fault.</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="DMI Used for Operational Control Display" goal_dim="goal" ref_type="obstruct" subgoal_name="Speed Restriction Not Uploaded" subgoal_dim="obstacle" alternative_id="0" >
+  <rationale>As a result of IT failure.</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Fourth Passenger Train Service Operated" goal_dim="goal" ref_type="obstruct" subgoal_name="2J03 Passed TSR from 30km per hour to 80km per hour" subgoal_dim="obstacle" alternative_id="0" >
+  <rationale>Speed restriction was crossed.</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="Temporary Speed Restriction Data Uploaded" goal_dim="goal" ref_type="obstruct" subgoal_name="Missing Independent Check" subgoal_dim="obstacle" alternative_id="0" >
+  <rationale>Signalman missed to perform check.</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="H3 - Train Enters Uncontrolled State" goal_dim="obstacle" ref_type="resolve" subgoal_name="Good Safety Management Engineering" subgoal_dim="goal" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="H1 - Loss of Safety Critical Signalling Data on the Cambrian Coast Line" goal_dim="obstacle" ref_type="resolve" subgoal_name="Use of Error Messages for Alerting Potential Failures of Safety Critical Systems" subgoal_dim="goal" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="H1 - Loss of Safety Critical Signalling Data on the Cambrian Coast Line" goal_dim="obstacle" ref_type="resolve" subgoal_name="Installation of Modified Equipment" subgoal_dim="goal" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="H4 - Operational Planning Violation" goal_dim="obstacle" ref_type="resolve" subgoal_name="Capture and Retention of Data for Investigating Failures" subgoal_dim="goal" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="H3 - Train Enters Uncontrolled State" goal_dim="obstacle" ref_type="resolve" subgoal_name="Inclusion of Defensive Programming (SQL) to Protect Againt Unsafe State" subgoal_dim="goal" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="H4 - Operational Planning Violation" goal_dim="obstacle" ref_type="resolve" subgoal_name="Robust Configuration Management" subgoal_dim="goal" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="H2 - Minimum Separation Standard Violation" goal_dim="obstacle" ref_type="resolve" subgoal_name="Implement a Mandatory Safety Assurance Procedure" subgoal_dim="goal" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="H1 - Loss of Safety Critical Signalling Data on the Cambrian Coast Line" goal_dim="obstacle" ref_type="resolve" subgoal_name="SIL to Ensure RBC Contains Correct TSR after Rollover" subgoal_dim="goal" alternative_id="0" >
+  <rationale>Step 4: Identification of Causal Factors </rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="H3 - Train Enters Uncontrolled State" goal_dim="obstacle" ref_type="and" subgoal_name="UCA - ETCS Failure" subgoal_dim="obstacle" alternative_id="0" >
+  <rationale>Step 3: Identification of Unsafe Control Actions</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="H2 - Minimum Separation Standard Violation" goal_dim="obstacle" ref_type="and" subgoal_name="UCA - ETCS Failure" subgoal_dim="obstacle" alternative_id="0" >
+  <rationale>Step 3: Identification of Unsafe Control Actions</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="H1 - Loss of Safety Critical Signalling Data on the Cambrian Coast Line" goal_dim="obstacle" ref_type="and" subgoal_name="UCA - Reliance on Procedures to Ensure TSR Application" subgoal_dim="obstacle" alternative_id="0" >
+  <rationale>Step 3: Identification of Unsafe Control Actions</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="A2 - Train Derailment" goal_dim="obstacle" ref_type="and" subgoal_name="H4 - Operational Planning Violation" subgoal_dim="obstacle" alternative_id="0" >
+  <rationale>Step 1: Identification of Accident leading to Hazard</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="A1 - Collision Between Two or More Trains" goal_dim="obstacle" ref_type="and" subgoal_name="H2 - Minimum Separation Standard Violation" subgoal_dim="obstacle" alternative_id="0" >
+  <rationale>Step 1: Identification of Accident leading to Hazard</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="A2 - Train Derailment" goal_dim="obstacle" ref_type="and" subgoal_name="H3 - Train Enters Uncontrolled State" subgoal_dim="obstacle" alternative_id="0" >
+  <rationale>Step 1: Identification of Accident leading to Hazard</rationale>
+</goal_association>
+<goal_association environment="Peak Hours"  goal_name="A1 - Collision Between Two or More Trains" goal_dim="obstacle" ref_type="and" subgoal_name="H1 - Loss of Safety Critical Signalling Data on the Cambrian Coast Line" subgoal_dim="obstacle" alternative_id="0" >
+  <rationale>Step 1: Identification of Accident leading to Hazard</rationale>
+</goal_association>
+</associations>
+
+<synopses>
+</synopses>
+
+<misusability>
+</misusability>
+
+<dataflows>
+</dataflows>
+
+
+
+</cairis_model>
